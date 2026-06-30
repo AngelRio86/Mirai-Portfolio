@@ -1,0 +1,891 @@
+{
+  "families": [
+    {
+      "id": "innometal",
+      "name": "Familia Innometal Group",
+      "companies": [
+        {
+          "name": "Innometal Group",
+          "level": "Plataforma",
+          "sector": "Metal y equipos",
+          "status": "En cartera / coparticipada",
+          "url": "https://www.innometalgroup.com/",
+          "urls": [
+            "https://mirai.investments/en/innometal-group-2/",
+            "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/",
+            "https://www.cuatrecasas.com/en/global/art/mirai-opens-up-capital-of-subsidiaries-innometal-and-ohmnia-to-public-and-private-partners"
+          ],
+          "platform": true,
+          "sede": "Bilbao / Vitoria-Gasteiz",
+          "anioAdquisicion": "2019",
+          "rol": "Plataforma de transformación metálica y montaje",
+          "modeloNegocio": "Grupo industrial B2B de fabricación metálica, montaje de equipos e integración de capacidades productivas",
+          "productos": "Diseño, fabricación, montaje, transformación metálica, equipos industriales, instalaciones de proceso, productos metálicos especiales",
+          "mercados": "OEMs industriales nacionales e internacionales; metal, equipos, construcción industrializada, farma, cosmética, renovables",
+          "facturacion": "130 M€",
+          "empleados": "650",
+          "ebitda": "",
+          "observaciones": "No es una sociedad operativa única en todos los casos; funciona como plataforma/familia. Mirai e Innometal dan cifras agregadas de grupo."
+        },
+        {
+          "name": "IMAR",
+          "level": "Empresa inicial / ancla",
+          "sector": "Transformación metálica; metal perforado, plegado, punzonado y expandido",
+          "status": "En cartera",
+          "url": "https://www.imar.es/",
+          "urls": [
+            "https://mirai.investments/en/innometal-group-2/",
+            "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"
+          ],
+          "platform": false,
+          "sede": "Domicilio social: Calle Fuentecillas 17-19, Vitoria-Gasteiz; plantas en Ortuella y Miranda de Ebro",
+          "anioAdquisicion": "2019",
+          "rol": "Empresa inicial / ancla de Innometal",
+          "modeloNegocio": "Fabricación industrial B2B por proyecto; ingeniería y fabricación de soluciones metálicas complejas",
+          "productos": "Chapa perforada, abocardada, estampada y metal expandido; ingeniería, diseño, fabricación y sistemas instalables",
+          "mercados": "Industria, arquitectura singular, electrónica, ferrocarril, acústica, mobiliario, maquinaria, filtros, alimentación",
+          "facturacion": "+20 M€",
+          "empleados": "80",
+          "ebitda": "",
+          "observaciones": "No confundir marca histórica IMAR con sociedad actual INNOMETAL 2019 SL. EEFF completos no localizados en abierto."
+        },
+        {
+          "name": "Naivan",
+          "level": "Compañía integrada",
+          "sector": "Fabricación metálica avanzada, pintura y montaje",
+          "status": "En cartera",
+          "url": "https://www.naivan.com/",
+          "urls": [
+            "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/",
+            "https://www.innometalgroup.com/en/installations/"
+          ],
+          "platform": false,
+          "sede": "Calle Fuentecillas 17-19, Vitoria-Gasteiz, Álava",
+          "anioAdquisicion": "",
+          "rol": "Compañía integrada en Innometal",
+          "modeloNegocio": "Gestión integral de proyectos de fabricación metálica, pintura y montaje",
+          "productos": "Transformación de chapa, calderería, soldadura, corte láser, punzonado, plegado, mecanizado, pintura, montaje final, ingeniería de producto, prototipado",
+          "mercados": "Máquina herramienta, industria 4.0, ferrocarril, renovables, defensa, autobús",
+          "facturacion": "+10 M€",
+          "empleados": ">100",
+          "ebitda": "",
+          "observaciones": "No he localizado fecha exacta de adquisición/integración por Mirai en fuente pública abierta. Hay divergencia de empleados entre fuentes."
+        },
+        {
+          "name": "Fervilor",
+          "level": "Compañía integrada",
+          "sector": "Corte láser, soldadura, plegado, mecanizado e impresión 3D",
+          "status": "En cartera",
+          "url": "https://www.fervilor.com/",
+          "urls": [
+            "https://mirai.investments/en/our-portfolio/fervilor/",
+            "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"
+          ],
+          "platform": false,
+          "sede": "Calle Zorrolleta 13, Polígono Jundiz, Vitoria-Gasteiz, Álava",
+          "anioAdquisicion": "2022",
+          "rol": "Compañía integrada en Innometal",
+          "modeloNegocio": "Fabricación metálica de alta complejidad y subcontratación industrial",
+          "productos": "Corte láser plano, tubo y 3D; grabado, soldadura, plegado, mecanizado, fabricación aditiva, chasis de autobús, estructuras y componentes de alto valor añadido",
+          "mercados": "Autobuses, climatización sostenible, elevación, construcción industrializada, ferrocarril",
+          "facturacion": "+7 M€",
+          "empleados": ">30",
+          "ebitda": "",
+          "observaciones": "La cifra de empleados varía según fuente. EEFF completos no localizados en abierto."
+        },
+        {
+          "name": "Model Metal",
+          "level": "Compañía integrada",
+          "sector": "Corte de bobina, calderería, estructuras metálicas y montajes industriales",
+          "status": "En cartera",
+          "url": "https://www.modelmetal.es/",
+          "urls": [
+            "https://mirai.investments/portfolio/model-metal/",
+            "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"
+          ],
+          "platform": false,
+          "sede": "Polígono Industrial San Colombar, 31360 Funes, Navarra",
+          "anioAdquisicion": "",
+          "rol": "Compañía integrada en Innometal",
+          "modeloNegocio": "Fabricación y pintura de piezas metálicas; centro de servicio y transformación metálica",
+          "productos": "Corte láser, punzonado, plegado, soldadura, pintura epoxi, montajes industriales, corte de bobina, calderería, estructuras metálicas",
+          "mercados": "Renovables, climatización, construcción industrializada, vending, automatización y bienes de equipo",
+          "facturacion": "+22 M€",
+          "empleados": ">40 ",
+          "ebitda": "",
+          "observaciones": "No he localizado fecha exacta de adquisición/integración por Mirai. La sociedad adquirió unidades productivas de Servichap y Peymo en 2020."
+        },
+        {
+          "name": "Servichap",
+          "level": "Integrada en Model Metal",
+          "sector": "Centro de servicio de procesado de bobina",
+          "status": "Integrada en Model Metal",
+          "url": "https://servichap.com/en",
+          "urls": [
+            "https://mirai.investments/portfolio/model-metal/",
+            "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"
+          ],
+          "platform": false,
+          "sede": "Polígono Industrial San Colombar, 31360 Funes, Navarra",
+          "anioAdquisicion": "2020",
+          "rol": "Unidad productiva integrada en Model Metal",
+          "modeloNegocio": "Centro de servicio de procesado de bobina de acero",
+          "productos": "Procesado de bobinas de acero, corte longitudinal, corte transversal, líneas de corte, formatos planos y fleje",
+          "mercados": "Vending, construcción industrializada, renovables, vehículos comerciales, automatización y bienes de equipo",
+          "facturacion": "+15 M€",
+          "empleados": "10",
+          "ebitda": "",
+          "observaciones": "La fuente de Mirai indica que Model Metal adquirió en 2020 unidades productivas de las extintas Servichap y Peymo. No trato Servichap como participada separada salvo validación mercantil adicional."
+        },
+        {
+          "name": "Peymo",
+          "level": "Integrada en Model Metal",
+          "sector": "Estructuras metálicas / actividad industrial procedente de unidad productiva",
+          "status": "Integrada en Model Metal",
+          "url": "N/A",
+          "urls": [
+            "https://mirai.investments/portfolio/model-metal/"
+          ],
+          "platform": false,
+          "sede": "Funes, Navarra",
+          "anioAdquisicion": "2020",
+          "rol": "Unidad productiva histórica integrada en Model Metal",
+          "modeloNegocio": "Actividad industrial incorporada a Model Metal tras concurso de acreedores",
+          "productos": "",
+          "mercados": "Transformación metálica / estructuras metálicas",
+          "facturacion": "",
+          "empleados": "No localizado",
+          "ebitda": "",
+          "observaciones": "No he localizado web operativa ni ficha mercantil suficiente. Debe tratarse como unidad productiva extinta, no como participada independiente."
+        },
+        {
+          "name": "Afarvi",
+          "level": "Compañía integrada",
+          "sector": "Instalaciones de proceso de fluidos para industria farmacéutica y cosmética",
+          "status": "En cartera",
+          "url": "https://www.afarvi.com/",
+          "urls": [
+            "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/",
+            "https://www.innometalgroup.com/en/installations/"
+          ],
+          "platform": false,
+          "sede": "Calle Atlántico 10, 28864 Ajalvir, Madrid",
+          "anioAdquisicion": "2023",
+          "rol": "Compañía integrada en Innometal",
+          "modeloNegocio": "Ingeniería, fabricación, instalación y mantenimiento de instalaciones de proceso de fluidos",
+          "productos": "Diseño, fabricación, instalación, automatización, control, cualificación, validación, mantenimiento; PW, WFI, vapor puro, biorreactores, CIP, reactores, skids",
+          "mercados": "Farmacéutica, cosmética, biotecnología, química, alimentación, veterinaria, nutracéutica",
+          "facturacion": "+25 M€ según Innometal; 21 M€ en 2022 según prensa sectorial",
+          "empleados": "+120 según Innometal; 141 según eInforma",
+          "ebitda": "",
+          "observaciones": "Buena información de actividad y ventas aproximadas. EEFF completos no localizados en abierto."
+        },
+        {
+          "name": "MAM",
+          "level": "Compañía integrada",
+          "sector": "Corte láser, soldadura, plegado, montaje y ensamblajes electromecánicos",
+          "status": "En cartera",
+          "url": "https://www.mam.es/",
+          "urls": [
+            "https://mirai.investments/portfolio/mam/",
+            "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"
+          ],
+          "platform": false,
+          "sede": "Domicilio mercantil: Calle Molí s/n, Nave 2, Martorelles, Barcelona; fábrica/oficina principal: Pla dels Avellaners 10, Santa Perpètua de Mogoda, Barcelona",
+          "anioAdquisicion": "2024",
+          "rol": "Compañía integrada en Innometal",
+          "modeloNegocio": "Desarrollo de proyectos integrales de fabricación metálica e instalación mecánica",
+          "productos": "Corte láser, soldadura, plegado, punzonado, inserción de pernos, pulido, ensamblajes, piezas y estructuras metálicas sofisticadas",
+          "mercados": "Vending y sistemas de cobro, electromedicina, renovables, entretenimiento, climatización",
+          "facturacion": "30 M€",
+          "empleados": "160 según Innometal; 134 según Empresite",
+          "ebitda": "",
+          "observaciones": "La cifra de ventas/empleados de Innometal puede reflejar actividad MAM/Metalec de forma agregada; validar con EEFF en fase final."
+        },
+        {
+          "name": "Metalec",
+          "level": "Compañía integrada",
+          "sector": "Montajes electromecánicos de alto valor añadido",
+          "status": "En cartera",
+          "url": "https://metalec.es/",
+          "urls": [
+            "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/",
+            "https://www.innometalgroup.com/en/installations/"
+          ],
+          "platform": false,
+          "sede": "Factory/Main office: Pla dels Avellaners 10, Santa Perpètua de Mogoda, Barcelona",
+          "anioAdquisicion": "",
+          "rol": "En cartera / coparticipada",
+          "modeloNegocio": "Compañía integrada en Innometal",
+          "productos": "Montaje electromecánico de alto valor añadido",
+          "mercados": "Montaje electromecánico, envolventes metálicas, elementos funcionales y decorativos para bienes de equipo, ingeniería de producto, prototipado, logística dedicada",
+          "facturacion": "Vending y sistemas de cobro, electromedicina, renovables, entretenimiento, smart cities",
+          "empleados": "",
+          "ebitda": "30 M€ según Innometal; rango 3-50 M€ según Axesor",
+          "observaciones": ""
+        },
+        {
+          "name": "Tecro",
+          "level": "Compañía integrada",
+          "sector": "Entreplantas, escaleras, barandillas y soluciones metálicas modulares",
+          "status": "En cartera",
+          "url": "https://www.tecro.es/",
+          "urls": [
+            "https://mirai.investments/portfolio/tecro/",
+            "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"
+          ],
+          "platform": false,
+          "sede": "Finca Los Prados s/n, Parcela 261 del Polígono 50, 26256 Villalobar de Rioja, La Rioja",
+          "anioAdquisicion": "2024",
+          "rol": "Compañía integrada en Innometal",
+          "modeloNegocio": "Diseño y fabricación de soluciones metálicas modulares para aprovechamiento de espacios",
+          "productos": "Entreplantas, escaleras, barandillas, estructuras modulares metálicas, soluciones domésticas e industriales, altillos y plataformas",
+          "mercados": "Construcción, logística y almacenamiento, industria, retail, B2B/B2C",
+          "facturacion": "9 M€ según Innometal; 8 M€ según prensa de operación",
+          "empleados": "30 según Innometal; 29 según Axesor",
+          "ebitda": "",
+          "observaciones": "Buena trazabilidad mercantil y operativa. EEFF completos no localizados en abierto."
+        },
+        {
+          "name": "IMAT",
+          "level": "Compañía integrada",
+          "sector": "Mobiliario técnico para aeropuertos y edificios colectivos",
+          "status": "En cartera",
+          "url": "https://www.imat.es/es/",
+          "urls": [
+            "https://mirai.investments/portfolio/imat/",
+            "https://capital-riesgo.es/en/articles/mirai-investments-acquires-lava-based-company-imat/"
+          ],
+          "platform": false,
+          "sede": "Paduleta Kalea 5, Polígono Jundiz, Vitoria-Gasteiz, Álava",
+          "anioAdquisicion": "2025",
+          "rol": "Compañía integrada en Innometal",
+          "modeloNegocio": "Fabricación B2B de mobiliario técnico para infraestructuras y zonas de espera",
+          "productos": "Diseño, fabricación y suministro de asientos para aeropuertos, hospitales, terminal marítima, autobús y tren; sistemas Master, Plus+Line, Recliner, Wave y Sardi",
+          "mercados": "Aeropuertos, hospitales, terminales marítimas, autobús, tren, zonas de espera",
+          "facturacion": "5 M€ en 2024",
+          "empleados": "12 según fuente mercantil abierta",
+          "ebitda": "",
+          "observaciones": "La integración industrial en Innometal está clara; la estructura mercantil debe revisarse porque algunas fuentes abiertas pueden mostrar vehículos societarios intermedios."
+        }
+      ]
+    },
+    {
+      "id": "ohmnia",
+      "name": "Familia Ohmnia Group",
+      "companies": [
+        {
+          "name": "Ohmnia Group",
+          "level": "Plataforma",
+          "sector": "Electrónica industrial / EMS",
+          "status": "En cartera / coparticipada",
+          "url": "https://www.ohmnia.es/",
+          "urls": [
+            "https://mirai.investments/en/ohmnia-2/",
+            "https://www.cuatrecasas.com/en/global/art/mirai-opens-up-capital-of-subsidiaries-innometal-and-ohmnia-to-public-and-private-partners"
+          ],
+          "platform": true,
+          "sede": "Calle Urrundi 10, 01013 Vitoria-Gasteiz, Álava",
+          "anioAdquisicion": "2020",
+          "rol": "Plataforma de electrónica industrial de Mirai",
+          "modeloNegocio": "Grupo EMS B2B; integración de fabricantes de electrónica industrial, cableado, tarjetas, teclados, subconjuntos y soluciones electromecánicas",
+          "productos": "Diseño, ingeniería, industrialización, fabricación, montaje electrónico, cableados, tarjetas electrónicas, teclados de membrana, teclados capacitivos, conjuntos mecatrónicos",
+          "mercados": "Aeronáutica, ferrocarril, renovables, defensa, movilidad eléctrica, control de accesos, elevación, electromedicina, industria",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": ""
+        },
+        {
+          "name": "TER / Técnicas Electrónicas Reunidas",
+          "level": "Empresa inicial / ancla",
+          "sector": "Montaje de circuitos impresos, placas electrónicas y conjuntos electromecánicos",
+          "status": "En cartera",
+          "url": "https://www.e-ter.com/",
+          "urls": [
+            "https://mirai.investments/en/ohmnia-2/",
+            "https://mirai.investments/portfolio/ter/"
+          ],
+          "platform": false,
+          "sede": "",
+          "anioAdquisicion": "",
+          "rol": "",
+          "modeloNegocio": "",
+          "productos": "",
+          "mercados": "",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": ""
+        },
+        {
+          "name": "Coycavi",
+          "level": "Compañía integrada",
+          "sector": "Cableados e interconexiones electrónicas",
+          "status": "En cartera",
+          "url": "https://www.coycavi.com/",
+          "urls": [
+            "https://mirai.investments/mirai-investments-adquiere-arteixo-telecom-y-refuerza-su-liderazgo-en-el-sector-electronico/",
+            "https://mirai.investments/portfolio/coycavi/"
+          ],
+          "platform": false,
+          "sede": "Calle Bekolarra 2, Pabellón 1, Polígono Industrial de Ali-Gobeo, 01010 Vitoria-Gasteiz, Álava",
+          "anioAdquisicion": "Desde 2020; fecha exacta no localizada en abierto",
+          "rol": "Compañía integrada en Ohmnia",
+          "modeloNegocio": "Fabricación B2B de cableados e interconexiones electrónicas",
+          "productos": "Cableados, interconexiones electrónicas, cableados de grandes dimensiones, microcableados, soluciones adaptadas a proyecto",
+          "mercados": "Energías renovables, máquina herramienta, automatización, ferroviario, elevación, electrónica, bienes de equipo",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "+65 según Mirai; 70 según eInforma"
+        },
+        {
+          "name": "Tectron",
+          "level": "Compañía integrada",
+          "sector": "Teclados de membrana, teclados capacitivos y carátulas",
+          "status": "En cartera",
+          "url": "https://www.tectron.es/",
+          "urls": [
+            "https://mirai.investments/mirai-investments-adquiere-arteixo-telecom-y-refuerza-su-liderazgo-en-el-sector-electronico/",
+            "https://mirai.investments/portfolio/tectron/"
+          ],
+          "platform": false,
+          "sede": "Portal de Gamarra 44, Zona Industrial de Gamarra, 01013 Vitoria-Gasteiz, Álava",
+          "anioAdquisicion": "Desde 2020; fecha exacta no localizada en abierto",
+          "rol": "Compañía integrada en Ohmnia",
+          "modeloNegocio": "Fabricación B2B de interfaces industriales impresas y electrónicas",
+          "productos": "Teclados de membrana, teclados capacitivos, carátulas, serigrafía industrial, impresión digital",
+          "mercados": "Electromedicina, bienes de equipo, elevación, electrodomésticos, máquina herramienta, equipos médicos y diagnóstico",
+          "facturacion": "2,5 M€ según Empresia",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "+25 según Mirai; 24 según Axesor"
+        },
+        {
+          "name": "IDK Elektronika",
+          "level": "Compañía integrada",
+          "sector": "Montaje de circuitos electrónicos y conjuntos electromecánicos",
+          "status": "En cartera",
+          "url": "https://www.idknet.net/",
+          "urls": [
+            "https://mirai.investments/mirai-investments-adquiere-arteixo-telecom-y-refuerza-su-liderazgo-en-el-sector-electronico/",
+            "https://mirai.investments/portfolio/idk/"
+          ],
+          "platform": false,
+          "sede": "Errenteria, Gipuzkoa; planta de producción de 6.000 m2",
+          "anioAdquisicion": "Desde 2020; fecha exacta no localizada en abierto",
+          "rol": "Compañía integrada en Ohmnia",
+          "modeloNegocio": "EMS industrial; ingeniería, industrialización y fabricación de proyectos electrónicos complejos",
+          "productos": "Montaje de circuitos electrónicos, fabricación de tarjetas, ingeniería, industrialización, ensamblaje de circuitos en conjuntos electromecánicos",
+          "mercados": "Movilidad eléctrica, control de accesos, elevación, ferrocarril, electrónica de consumo, IoT, smart city",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": ""
+        },
+        {
+          "name": "Alcoelectro",
+          "level": "Compañía integrada",
+          "sector": "Montaje electrónico y mecatrónico para industrias de alto valor añadido",
+          "status": "En cartera",
+          "url": "https://www.alcoelectro.com/",
+          "urls": [
+            "https://mirai.investments/mirai-investments-adquiere-la-empresa-de-equipos-electronicos-alcoelectro/",
+            "https://mirai.investments/portfolio/alcoelectro/"
+          ],
+          "platform": false,
+          "sede": "Calle Gran Vía Don Diego López de Haro 45, 9º, Bilbao, Bizkaia; instalación productiva de 1.200 m2 en Madrid",
+          "anioAdquisicion": "2024",
+          "rol": "Compañía integrada en Ohmnia",
+          "modeloNegocio": "EMS y montaje mecatrónico B2B para industrias de alto valor añadido",
+          "productos": "Montaje electrónico, montaje mecatrónico, fabricación de equipos electrónicos, prototipos, grandes series, producto terminado llave en mano, rework, industrialización de producto",
+          "mercados": "Ferroviario, comunicaciones, seguridad, elevación, iluminación, IoT, telecomunicaciones, electrónica de consumo, informática, señalética, electrónica industrial, electromedicina",
+          "facturacion": "2,5 M€ según Empresia",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "+25 según Mirai; 27 según Axesor; 32 según eInforma"
+        },
+        {
+          "name": "Arteixo Telecom",
+          "level": "Compañía integrada",
+          "sector": "Diseño y fabricación de tarjetas electrónicas",
+          "status": "En cartera",
+          "url": "https://www.arteixo.com/",
+          "urls": [
+            "https://mirai.investments/mirai-investments-adquiere-arteixo-telecom-y-refuerza-su-liderazgo-en-el-sector-electronico/",
+            "https://capital-riesgo.es/es/articles/mirai-investments-adquiere-arteixo-telecom-y-refuerza-su-liderazgo-en-el-sector-electronico/"
+          ],
+          "platform": false,
+          "sede": "As Pontes de García Rodríguez, A Coruña; fábrica de 6.000 m2 sobre parcela de 16.000 m2; oficina comercial en Madrid",
+          "anioAdquisicion": "2025",
+          "rol": "Compañía integrada en Ohmnia",
+          "modeloNegocio": "EMS y soluciones electrónicas industriales de ciclo completo",
+          "productos": "Diseño, creación, fabricación, instalación, comercialización, mantenimiento, reparación y servicio postventa de equipos electrónicos de comunicaciones e industriales",
+          "mercados": "Defensa, ferrocarril, renovables, aeronáutica, electrónica industrial, comunicaciones",
+          "facturacion": "12,4 M€",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "Administrador único: CLERBIL SL según fuente mercantil"
+        },
+        {
+          "name": "Idistek",
+          "level": "Compañía integrada",
+          "sector": "Diseño, fabricación e industrialización de tarjetas y conjuntos electrónicos complejos",
+          "status": "En cartera",
+          "url": "https://www.idistek.com/",
+          "urls": [
+            "https://capital-riesgo.es/en/articles/mirai-acquires-gipuzkoa-based-company-idistek/",
+            "https://es.linkedin.com/posts/mirai-investments_nota-de-prensa-adquisici%C3%B3n-idistek-activity-7422585703550836736-ZWpx"
+          ],
+          "platform": false,
+          "sede": "Zikuñaga Bailara 48, 20120 Hernani, Gipuzkoa",
+          "anioAdquisicion": "2026",
+          "rol": "Compañía integrada en Ohmnia",
+          "modeloNegocio": "EMS; diseño, industrialización y fabricación de tarjetas y conjuntos electrónicos complejos",
+          "productos": "Diseño electrónico, industrialización, fabricación de tarjetas electrónicas complejas, conjuntos electrónicos, ensamblajes, validación final, ingeniería a producto terminado",
+          "mercados": "Electromedicina, HVAC, industria, multimedia; también sectores de alto valor añadido como aeronáutica, ferrocarril, renovables y defensa",
+          "facturacion": "17 M€ según ficha Mirai; 8 M€ según prensa de operación",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "40"
+        }
+      ]
+    },
+    {
+      "id": "labery",
+      "name": "Familia Labery",
+      "companies": [
+        {
+          "name": "Labery",
+          "level": "Plataforma",
+          "sector": "Cosmética y cuidado personal / CDMO",
+          "status": "En cartera",
+          "url": "https://www.labery.es/",
+          "urls": [
+            "https://mirai.investments/en/labery/",
+            "https://mirai.investments/labery-2/"
+          ],
+          "platform": true,
+          "sede": "",
+          "anioAdquisicion": "2026",
+          "rol": "En cartera",
+          "modeloNegocio": "División cosmética de Mirai",
+          "productos": "CDMO full service para desarrollo y fabricación de productos cosméticos a terceros",
+          "mercados": "Ideación, I+D+i, formulación, fabricación, llenado, envasado, packaging, acondicionamiento, logística y entrega final",
+          "facturacion": "Cosmética, cuidado personal, perfumería, parafarmacia, marcas cosméticas, laboratorios y terceros",
+          "empleados": "",
+          "ebitda": "Previsión superior a 25 M€ en 2026",
+          "observaciones": ""
+        },
+        {
+          "name": "Ternum Cosmetics",
+          "level": "Compañía integrada",
+          "sector": "I+D, formulación y desarrollo cosmético",
+          "status": "En cartera",
+          "url": "https://www.ternum.com/",
+          "urls": [
+            "https://mirai.investments/en/our-portfolio/ternum-cosmetics/",
+            "https://mirai.investments/en/labery/"
+          ],
+          "platform": false,
+          "sede": "Barberà del Vallès, Barcelona",
+          "anioAdquisicion": "2026",
+          "rol": "Motor de innovación, I+D+i y formulación de Labery",
+          "modeloNegocio": "Servicios B2B de I+D+i, diseño y formulación cosmética a medida",
+          "productos": "Creación de marca cosmética, formulación, I+D+i, estudios de estabilidad y compatibilidad, evaluación de seguridad, PIF, asesoramiento en marketing, fabricación y envasado ad hoc, control de calidad",
+          "mercados": "Cosmética personalizada, cosmética natural, cosmética de tratamiento, marcas cosméticas, cuidado personal",
+          "facturacion": "",
+          "empleados": "8 según Axesor; 11 según Empresite",
+          "ebitda": "",
+          "observaciones": "La razón social parece haber cambiado a Labery Solutions SL manteniendo CIF B60995156; conviene validar en Registro Mercantil. No hay ventas abiertas específicas fiables."
+        },
+        {
+          "name": "Laboratorios Coper",
+          "level": "Compañía integrada",
+          "sector": "Fabricación, envasado y acondicionamiento cosmético",
+          "status": "En cartera",
+          "url": "https://mirai.investments/en/labery/",
+          "urls": [
+            "https://mirai.investments/en/labery/",
+            "https://mirai.investments/labery-2/"
+          ],
+          "platform": false,
+          "sede": "Domicilio social mercantil: Gran Vía Don Diego López de Haro 45, 9º, Bilbao; instalación operativa: Miquel Torelló Pagès 33-35, nave 9, Molins de Rei, Barcelona",
+          "anioAdquisicion": "2024",
+          "rol": "Fabricación, desarrollo, envasado y acondicionamiento dentro de Labery",
+          "modeloNegocio": "Fabricación B2B / tercerista de cosmética y perfumería; desarrollo, producción y envasado",
+          "productos": "Desarrollo de producto, producción de cosmética y perfumería, cremas, geles acuosos, colonias, perfumes, cosmética decorativa, barras y brillos de labios, maquillajes fluidos, máscaras de pestañas, envasado y acondicionado",
+          "mercados": "Cosmética, perfumería, farmacia, lujo, cuidado de la piel, fragancias",
+          "facturacion": "Parte de Coper+Jumsa: más de 10 M€ en el momento de adquisición; facturación individual no localizada en abierto",
+          "empleados": "12 según Axesor; Coper+Jumsa más de 90 empleados según Mirai",
+          "ebitda": "",
+          "observaciones": "La información pública mezcla Coper y Jumsa como operación conjunta. Para EEFF separados hay que acudir a cuentas depositadas o bases mercantiles completas."
+        },
+        {
+          "name": "Jumsa Cosmetic",
+          "level": "Compañía integrada",
+          "sector": "Fabricación y llenado cosmético",
+          "status": "En cartera",
+          "url": "https://mirai.investments/en/labery/",
+          "urls": [
+            "https://mirai.investments/en/labery/",
+            "https://mirai.investments/labery-2/"
+          ],
+          "platform": false,
+          "sede": "Domicilio social mercantil: Gran Vía Don Diego López de Haro 45, 9º, Bilbao; instalación operativa: Carrer del Samontà 15-17, Sant Joan Despí, Barcelona",
+          "anioAdquisicion": "2024",
+          "rol": "Fabricación, envasado y acondicionamiento dentro de Labery",
+          "modeloNegocio": "Servicios B2B de envasado, acondicionado y fabricación cosmética / perfumería",
+          "productos": "Envasado de fluidos, emulsiones, granulados sólidos y polvo libre; acondicionamiento; fabricación de cosméticos y perfumería; servicios adaptados a cliente",
+          "mercados": "Cosmética, perfumería, salud y belleza, terceros industriales",
+          "facturacion": "Parte de Coper+Jumsa: más de 10 M€ en el momento de adquisición; rango Axesor 3.000.001 € - 50.000.000 €",
+          "empleados": "51 según Empresite; rango 51-200 según Axesor; Coper+Jumsa más de 90 empleados según Mirai",
+          "ebitda": "",
+          "observaciones": "La información pública mezcla Coper y Jumsa como operación conjunta. Algunas fuentes sectoriales antiguas la clasifican como distribución, pero su web y Mirai la presentan como envasado/fabricación cosmética."
+        },
+        {
+          "name": "Cosmeprint",
+          "level": "Compañía integrada",
+          "sector": "Packaging para cosmética, cuidado personal, alimentación y parafarmacia",
+          "status": "En cartera",
+          "url": "https://www.cosmeprint.com/",
+          "urls": [
+            "https://mirai.investments/en/labery/",
+            "https://mirai.investments/labery-2/",
+            "https://capital-riesgo.es/es/articles/mirai-investments-adquiere-cosmeprint-y-amplia-su-presencia-en-el-sector-de-cosmetica-y-cuidado-personal/"
+          ],
+          "platform": false,
+          "sede": "Polígono Industrial La Plana, nave 6 y 7, Carretera de Llinars a Cànoves, km 44,5, 08458 Sant Pere de Vilamajor, Barcelona",
+          "anioAdquisicion": "2026",
+          "rol": "Packaging cosmético dentro de Labery",
+          "modeloNegocio": "Consultoría, comercialización y suministro de soluciones de packaging para cosmética y cuidado personal",
+          "productos": "Packaging, diseño, suministro, acabados finales, alternativas recicladas, soluciones de envase para cosmética, cuidado personal, parafarmacia y alimentación",
+          "mercados": "Cosmética, cuidado personal, parafarmacia, alimentación, marcas boutique, laboratorios internacionales",
+          "facturacion": "10 M€ según Mirai; cerca de 10 M€ en 2023 según prensa; rango Iberinform 6.000.000 € - 15.000.000 €",
+          "empleados": "11-25 según Iberinform; 11-50 según Axesor",
+          "ebitda": "",
+          "observaciones": "La actividad puede aparecer en fuentes mercantiles como comercio mayorista, aunque Mirai la presenta estratégicamente como packaging para cosmética."
+        }
+      ]
+    },
+    {
+      "id": "salud",
+      "name": "Familia Grupo Salud",
+      "companies": [
+        {
+          "name": "Salud Mirai",
+          "level": "Plataforma / grupo clínico",
+          "sector": "Medicina estética, cirugía estética, medicina capilar y medicina estética facial",
+          "status": "En cartera",
+          "url": "https://mirai.investments/salud/",
+          "urls": [
+            "https://mirai.investments/salud/"
+          ],
+          "platform": true,
+          "sede": "",
+          "anioAdquisicion": "2024 / 2025",
+          "rol": "En cartera",
+          "modeloNegocio": "Plataforma clínica de medicina y cirugía estética",
+          "productos": "Grupo clínico de servicios médicos privados especializados; prestación de tratamientos médicos, quirúrgicos y médico-estéticos",
+          "mercados": "Medicina estética, cirugía estética, cirugía plástica, medicina capilar, cirugía capilar, medicina estética facial, tratamientos mínimamente invasivos, diagnóstico facial, planificación anatómica",
+          "facturacion": "Mercado privado de medicina estética, cirugía estética, cirugía capilar y estética facial en España",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "Grupo con 8 centros en 6 comunidades autónomas según Mirai"
+        },
+        {
+          "name": "Clínicas Diego de León",
+          "level": "Compañía / proyecto integrado",
+          "sector": "Cirugía y medicina estética",
+          "status": "En cartera",
+          "url": "https://www.clinicasdiegodeleon.com/",
+          "urls": [
+            "https://mirai.investments/salud/"
+          ],
+          "platform": false,
+          "sede": "Madrid; clínicas en C/ Diego de León 69, Paseo de la Habana 1 y Hospital Fuensanta según web corporativa",
+          "anioAdquisicion": "2024 / 2025",
+          "rol": "Proyecto clínico integrado en Salud Mirai",
+          "modeloNegocio": "Prestación de servicios médicos privados en medicina estética, cirugía estética y cirugía plástica",
+          "productos": "Medicina estética, cirugía plástica, cirugía estética, tratamientos faciales, corporales, adelgazamiento, tratamientos capilares, rinomodelación, aumento de pecho, abdominoplastia, blefaroplastia, lifting sin cirugía, tratamientos antiaging",
+          "mercados": "Medicina estética privada, cirugía estética, cirugía plástica, estética corporal y facial",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "La marca puede operar con varias clínicas y sociedades vinculadas. La razón social incluida es la más directamente localizada en fuentes mercantiles, pero conviene validar estructura completa en Registro Mercantil / SABI."
+        },
+        {
+          "name": "Livet",
+          "level": "Compañía / proyecto integrado",
+          "sector": "Medicina y cirugía capilar",
+          "status": "En cartera",
+          "url": "https://www.livet.es/",
+          "urls": [
+            "https://mirai.investments/salud/"
+          ],
+          "platform": false,
+          "sede": "Calle Velázquez 146, local, Madrid",
+          "anioAdquisicion": "2024 / 2025",
+          "rol": "Proyecto clínico integrado en Salud Mirai",
+          "modeloNegocio": "Clínica privada especializada en medicina y cirugía capilar, con extensión a medicina estética y otros servicios médicos",
+          "productos": "Trasplante capilar, microinjerto capilar FUE, cirugía capilar, medicina capilar, diagnóstico capilar, seguimiento personalizado, medicina estética, tratamientos faciales y corporales, odontología según presencia digital",
+          "mercados": "Medicina capilar, cirugía capilar, medicina estética, trasplante capilar, estética privada",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "La web oficial de Livet identifica como titular a Clínica Fernández-Villar SL. Existe también Livet Medicina y Cirugía Estética SL en fuentes mercantiles, por lo que conviene validar qué sociedades forman el perímetro adquirido."
+        },
+        {
+          "name": "Facial Clinique",
+          "level": "Compañía / proyecto integrado",
+          "sector": "Medicina estética facial",
+          "status": "En cartera",
+          "url": "https://www.facialclinique.com/",
+          "urls": [
+            "https://mirai.investments/salud/"
+          ],
+          "platform": false,
+          "sede": "Domicilio social: Gran Vía Don Diego López de Haro 45, 9º, Bilbao; red con presencia en Barcelona, Santander, Castellón, Palma de Mallorca y Bilbao según prensa",
+          "anioAdquisicion": "2024 / 2025",
+          "rol": "Proyecto clínico integrado en Salud Mirai",
+          "modeloNegocio": "Red de clínicas privadas especializadas en medicina estética facial y cirugía estética facial",
+          "productos": "Medicina estética facial, pequeñas cirugías faciales, diagnóstico global del rostro, planificación anatómica, técnicas mínimamente invasivas, tratamientos quirúrgicos y no quirúrgicos faciales",
+          "mercados": "Medicina estética facial, cirugía estética facial, estética privada, tratamientos faciales",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "La estructura societaria puede incluir sociedades locales adicionales, como Facial Clinique Madrid 1 SL. Para el perímetro final conviene validar filiales y centros en Registro Mercantil."
+        }
+      ]
+    },
+    {
+      "id": "ambiental",
+      "name": "Familia Servicios Ambientales",
+      "companies": [
+        {
+          "name": "Servicios Ambientales Mirai",
+          "level": "Plataforma / grupo ambiental",
+          "sector": "Servicios ambientales, economía circular, suelos, residuos, demolición y excavación",
+          "status": "En cartera",
+          "url": "https://mirai.investments/afesa-y-mendiola/",
+          "urls": [
+            "https://mirai.investments/afesa-y-mendiola/",
+            "https://capital-riesgo.es/es/articles/mirai-adquiere-las-empresas-vascas-afesa-y-mendiola-para-entrar-en-el-sector-de-servicios-ambientales/"
+          ],
+          "platform": true,
+          "sede": "Euskadi; operaciones en Península e Islas",
+          "anioAdquisicion": "2026",
+          "rol": "Plataforma de servicios ambientales de Mirai",
+          "modeloNegocio": "Grupo B2B de servicios ambientales, economía circular, descontaminación, demolición, residuos y excavación para clientes industriales, energéticos y de construcción",
+          "productos": "Tratamiento de suelos contaminados, demoliciones industriales, gestión de residuos industriales, gestión de residuos de construcción y demolición, excavación, rehabilitación y desmantelamiento",
+          "mercados": "Industria pesada, energía, construcción, promotores, grandes industrias, procesos de transformación y rehabilitación industrial",
+          "facturacion": "~80 M€ según Mirai; previsión cercana a 100 M€ en 2026 según nota de operación",
+          "empleados": "~290 según Mirai; previsión de unas 300 personas según nota de operación",
+          "ebitda": "",
+          "observaciones": "No he localizado razón social holding específica. Tratar como plataforma/división, no como sociedad operativa única, salvo validación mercantil posterior."
+        },
+        {
+          "name": "Afesa Medio Ambiente",
+          "level": "Compañía integrada",
+          "sector": "Suelos contaminados, residuos industriales y servicios ambientales",
+          "status": "En cartera",
+          "url": "https://www.afesa.es/",
+          "urls": [
+            "https://mirai.investments/afesa-y-mendiola/",
+            "https://capital-riesgo.es/es/articles/mirai-adquiere-las-empresas-vascas-afesa-y-mendiola-para-entrar-en-el-sector-de-servicios-ambientales/"
+          ],
+          "platform": false,
+          "sede": "Calle Idorsolo Kalea 15, 48160 Derio, Bizkaia; centros adicionales en Lantarón y Villanubla según nota de operación",
+          "anioAdquisicion": "2026",
+          "rol": "Compañía integrada en Servicios Ambientales",
+          "modeloNegocio": "Servicios B2B de ingeniería ambiental, descontaminación, gestión de residuos y demolición industrial",
+          "productos": "Descontaminación de suelos y acuíferos, investigación y recuperación de suelos contaminados, demoliciones, achatarramiento, voladuras controladas, gestión avanzada de residuos, desmantelamiento de instalaciones industriales",
+          "mercados": "Industria vasca, industria pesada, energía, construcción, administraciones, proyectos industriales complejos",
+          "facturacion": "65 M€ en 2025 según nota de operación",
+          "empleados": "190 según nota de operación; 173 según Axesor",
+          "ebitda": "",
+          "observaciones": "DatosCif identifica a Harrimet SL como socio único tras la operación; conviene validar estructura de control final. EEFF completos no localizados en abierto."
+        },
+        {
+          "name": "Excavaciones Mendiola",
+          "level": "Compañía integrada",
+          "sector": "Excavación, demolición y gestión de residuos de construcción y demolición",
+          "status": "En cartera",
+          "url": "https://www.mendiola.es/",
+          "urls": [
+            "https://mirai.investments/afesa-y-mendiola/",
+            "https://capital-riesgo.es/es/articles/mirai-adquiere-las-empresas-vascas-afesa-y-mendiola-para-entrar-en-el-sector-de-servicios-ambientales/"
+          ],
+          "platform": false,
+          "sede": "Calle Paduleta 49, 01015 Vitoria-Gasteiz, Álava; situada en Júndiz según nota de operación",
+          "anioAdquisicion": "2026",
+          "rol": "Compañía integrada en Servicios Ambientales",
+          "modeloNegocio": "Servicios B2B de obra civil, excavación, demolición, transporte y gestión de residuos de construcción y demolición",
+          "productos": "Excavaciones, movimientos de tierra, apertura de pistas, limpieza de montes, levantamiento de firmes, acondicionamiento de infraestructuras, extinción de incendios en montes y bosques, demolición y derribo, gestión de residuos de construcción y demolición",
+          "mercados": "Construcción, obra civil, industria, energía, residuos de construcción y demolición, rehabilitación y desmantelamiento",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "No he localizado ventas ni empleados específicos en abierto en fuentes suficientemente robustas. La cifra agregada de plataforma no debe atribuirse individualmente a Mendiola."
+        }
+      ]
+    },
+    {
+      "id": "otros",
+      "name": "Empresas No Agrupados",
+      "companies": [
+        {
+          "name": "Batela",
+          "level": "",
+          "sector": "Moda náutica, impermeables y moda funcional",
+          "status": "En cartera",
+          "url": "https://batela.com/",
+          "urls": [
+            "https://mirai.investments/portfolio/batela-2/",
+            "https://mirai.investments/en/our-portfolio/"
+          ],
+          "platform": false,
+          "sede": "Calle Sansinenea Industrialdea, A1-13, Partzela Arroa, Zestoa, Gipuzkoa",
+          "anioAdquisicion": "2025",
+          "rol": "",
+          "modeloNegocio": "Marca B2B/B2C de moda náutica, impermeables y decoración marinera",
+          "productos": "Ropa náutica, chubasqueros, camisetas marineras, moda mujer, hombre, niño y bebé, decoración náutica, complementos",
+          "mercados": "Moda náutica, moda impermeable, decoración marinera, mercados internacionales",
+          "facturacion": "17 M€ en 2024 según Mirai; rango 15-30 M€ según Iberinform",
+          "empleados": "40 según Mirai; 11-25 según Iberinform",
+          "ebitda": "",
+          "observaciones": "No es una familia probada. Tantä aparece como segunda marca de Batela, no como compañía adquirida separada."
+        },
+        {
+          "name": "Tantä",
+          "level": "",
+          "sector": "Moda waterproof / urbana",
+          "status": "Integrada en Batela como marca",
+          "url": "https://tanta-rainwear.com/",
+          "urls": [
+            "https://mirai.investments/portfolio/batela-2/"
+          ],
+          "platform": false,
+          "sede": "",
+          "anioAdquisicion": "No aplica",
+          "rol": "",
+          "modeloNegocio": "Línea de moda urbana impermeable dentro de Batela",
+          "productos": "Prendas 100% impermeables, diseño minimalista, tejidos técnicos, ropa waterproof",
+          "mercados": "Moda urbana, rainwear, moda técnica impermeable",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "No tratar como participada ni adquisición separada. Se incluye aquí solo para documentar que aparece vinculada a Batela."
+        },
+        {
+          "name": "ISFA",
+          "level": "",
+          "sector": "Agroindustria",
+          "status": "En cartera",
+          "url": "https://isfagro.com/",
+          "urls": [
+            "https://mirai.investments/en/our-portfolio/isfa/",
+            "https://mirai.investments/en/our-portfolio/"
+          ],
+          "platform": false,
+          "sede": "Calle Aranzabal 9, Oficina 7, 01008 Vitoria-Gasteiz, Álava",
+          "anioAdquisicion": "No localizada con fecha exacta pública; Mirai participa desde fase de concepción según su ficha",
+          "rol": "",
+          "modeloNegocio": "Desarrollo y gestión de proyectos agrarios eficientes y sostenibles",
+          "productos": "Desarrollo de explotaciones agrícolas, gestión de proyectos agrarios, cultivos SES, almendro en seto, diversificación hacia pistacho y arándano",
+          "mercados": "Agroindustria, agricultura sostenible, España y Portugal, activos reales agrícolas",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": "Consejo de administración; Azora Capital aparece como consejero en fuente mercantil abierta"
+        },
+        {
+          "name": "Uztagroup",
+          "level": "",
+          "sector": "Inmobiliario",
+          "status": "En cartera según track record",
+          "url": "https://mirai.investments/track-record/",
+          "urls": [
+            "https://mirai.investments/track-record/"
+          ],
+          "platform": false,
+          "sede": "Calle Gran Vía Don Diego López de Haro 45, 9ª, Bilbao, Bizkaia",
+          "anioAdquisicion": "No localizada con precisión pública",
+          "rol": "",
+          "modeloNegocio": "Administración y explotación de fincas; actividad inmobiliaria / patrimonial",
+          "productos": "Administración y explotación de fincas, alquiler de bienes inmobiliarios por cuenta propia",
+          "mercados": "Inmobiliario / patrimonial",
+          "facturacion": "1-2,5 M€ según Empresia",
+          "empleados": "No localizado",
+          "ebitda": "",
+          "observaciones": "No hay declaración de integración en familia. Actividad CNAE aparece de forma no homogénea entre fuentes; tratar como activo inmobiliario/patrimonial hasta validación mercantil completa."
+        },
+        {
+          "name": "Dos Grados Capital",
+          "level": "",
+          "sector": "Renovables",
+          "status": "Desinvertida",
+          "url": "https://mirai.investments/track-record/",
+          "urls": [
+            "https://mirai.investments/track-record/"
+          ],
+          "platform": false,
+          "sede": "Paseo de la Castellana 130, 28046 Madrid",
+          "anioAdquisicion": "2018 como plataforma fundada por Mirai y JB Capital Markets",
+          "rol": "",
+          "modeloNegocio": "Plataforma de inversión y gestión de activos reales sostenibles",
+          "productos": "Inversión, gestión, desarrollo y asesoramiento en activos renovables, energía eólica, fotovoltaica, almacenamiento energético, hidrógeno y activos electrointensivos",
+          "mercados": "Renovables, infraestructura energética, activos reales sostenibles, Iberia y Francia",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": ""
+        },
+        {
+          "name": "Sidenhol",
+          "level": "",
+          "sector": "Renovables",
+          "status": "Desinvertida",
+          "url": "https://mirai.investments/track-record/",
+          "urls": [
+            "https://mirai.investments/track-record/"
+          ],
+          "platform": false,
+          "sede": "Calle Gran Vía Don Diego López de Haro 45, 9º, Bilbao, Bizkaia según eInforma; Calle Frauca 13, Tudela, Navarra según Cinco Días",
+          "anioAdquisicion": "2021",
+          "rol": "",
+          "modeloNegocio": "Joint venture / plataforma para proyectos de economía sostenible vinculados a energía, residuos y reducción de impacto ambiental",
+          "productos": "Autoconsumo eléctrico, luminarias, soluciones de eficiencia energética, residuos, generación de energía sostenible, proyectos transversales de sostenibilidad",
+          "mercados": "Industria, energía sostenible, autoconsumo, economía circular, Sidenor y sectores productivos",
+          "facturacion": "",
+          "empleados": "",
+          "ebitda": "",
+          "observaciones": ""
+        },
+        {
+          "name": "Talgo",
+          "level": "",
+          "sector": "Ferroviario",
+          "status": "Coparticipada / consorcial",
+          "url": "https://www.talgo.com/",
+          "urls": [
+            "https://www.alantra.com/ib-transaction/mirai-investments-buy-side-advisory-talgo/",
+            "https://capital-riesgo.es/es/articles/alantra-asesora-a-un-consorcio-liderado-por-mirai-en-la-adquisici-n-de-una-participaci-n-del-29-8-en-talgo/"
+          ],
+          "platform": false,
+          "sede": "Paseo del Tren Talgo 2, Las Rozas de Madrid, Madrid; sede corporativa en entorno Madrid",
+          "anioAdquisicion": "2025 / 2026 según cierre y comunicaciones de operación",
+          "rol": "",
+          "modeloNegocio": "Diseño, fabricación, mantenimiento y servicios ferroviarios",
+          "productos": "Diseño y fabricación de trenes de muy alta velocidad, larga distancia e intercity; mantenimiento ferroviario; remodelación; soluciones ferroviarias y servicios asociados",
+          "mercados": "Ferroviario, alta velocidad, transporte de pasajeros, mantenimiento, contratos internacionales",
+          "facturacion": "618 M€ ingresos 2025; 172 M€ ingresos Q1 2026",
+          "empleados": "Rango LinkedIn 1.001-5.000 empleados; fuentes mercantiles de la matriz no reflejan plantilla consolidada",
+          "ebitda": "",
+          "observaciones": "Operación sobre 29,76327%-29,8% de Talgo por consorcio liderado por Mirai/Clerbil junto con BBK, Fundación Vital y Finkatuz. No es una adquisición de control total ni una familia Mirai."
+        }
+      ]
+    }
+  ]
+}
