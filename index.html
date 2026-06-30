@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mirai Investments · Portfolio Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* === ASTARA INTELLIGENCE DESIGN SYSTEM - TOKENS === */
+:root {
+  --as-bg-page: #f2f4f6;
+  --as-surface: #ffffff;
+  --as-surface-muted: #f8fbff;
+  --as-bg-dark: #221e41;
+  --as-bg-mid: #243a63;
+  --as-accent: #1a4d7a;
+  --as-accent-strong: #143d61;
+  --as-accent-light: #8bcdff;
+  --as-accent-teal: #86bfc6;
+  --as-accent-lime: #c1e14e;
+  --as-fg-1: #221e41;
+  --as-fg-2: #2e4a62;
+  --as-fg-3: #5a7a94;
+  --as-fg-on-dark: #eaf1f8;
+  --as-border: #c4d3df;
+  --as-border-subtle: rgba(26,77,122,.10);
+  --as-success: #2f7d5b;
+  --as-warning: #8a6d1f;
+  --as-danger: #b4452f;
+  --as-shadow-sm: 0 8px 20px rgba(34,30,65,.05);
+  --as-shadow-md: 0 14px 30px rgba(26,77,122,.12);
+  --as-shadow-lg: 0 30px 70px rgba(34,30,65,.24);
+  --as-radius-xs: 8px;
+  --as-radius-sm: 12px;
+  --as-radius-md: 16px;
+  --as-radius-lg: 22px;
+  --as-radius-pill: 9999px;
+  --as-font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --as-text-xs: 11px;
+  --as-text-sm: 13px;
+  --as-text-base: 15px;
+  --as-text-lg: 18px;
+  --as-text-xl: 22px;
+  --as-text-2xl: 28px;
+  --as-text-3xl: 36px;
+  --as-dur-fast: 120ms;
+  --as-dur: 200ms;
+  --as-dur-slow: 320ms;
+  --as-ease: cubic-bezier(.2,.7,.2,1);
+  --as-z-dropdown: 400;
+  --as-z-overlay: 1000;
+  --as-z-modal: 1010;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --as-dur-fast: 0ms; --as-dur: 0ms; --as-dur-slow: 0ms; }
+}
+
+/* RESET */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--as-font-sans);
+  background: var(--as-bg-page);
+  color: var(--as-fg-1);
+  font-size: var(--as-text-base);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+button { font-family: var(--as-font-sans); cursor: pointer; }
+a { text-decoration: none; }
+
+/* TOPBAR */
+#topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: linear-gradient(135deg, #1a4d7a 0%, #243a63 52%, #221e41 100%);
+  padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+  box-shadow: var(--as-shadow-md);
+}
+.topbar-logo { display: flex; align-items: center; gap: 12px; }
+.topbar-logo img { height: 20px; width: auto; object-fit: contain; }
+.topbar-product {
+  font-size: var(--as-text-sm); font-weight: 600;
+  color: rgba(234,241,248,.5); letter-spacing: .06em;
+  border-left: 1px solid rgba(255,255,255,.15); padding-left: 12px;
+}
+.topbar-meta { display: flex; align-items: center; gap: 12px; }
+.topbar-badge {
+  background: rgba(139,205,255,.15); border: 1px solid rgba(139,205,255,.3);
+  color: var(--as-accent-light); font-size: var(--as-text-xs); font-weight: 700;
+  padding: 3px 10px; border-radius: var(--as-radius-pill); letter-spacing: .05em;
+}
+
+/* KPI STRIP / HERO */
+#kpi-strip {
+  background: linear-gradient(135deg, #1a4d7a 0%, #243a63 52%, #221e41 100%);
+  padding: 44px 32px 36px;
+  position: relative; overflow: hidden;
+}
+#kpi-strip::before {
+  content: ''; position: absolute; top: -40%; right: -5%;
+  width: 50%; height: 200%;
+  background: radial-gradient(ellipse, rgba(139,205,255,.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-header { max-width: 1200px; margin: 0 auto 28px; }
+.hero-logo { height: 42px; width: auto; display: block; margin-bottom: 20px; }
+.hero-title {
+  font-size: var(--as-text-3xl); font-weight: 700; letter-spacing: -0.03em;
+  color: var(--as-fg-on-dark); margin-bottom: 22px;
+}
+.hero-search-wrap {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,.10); border: 1px solid rgba(139,205,255,.22);
+  border-radius: var(--as-radius-pill); padding: 12px 22px;
+  backdrop-filter: blur(10px); max-width: 520px;
+  transition: border-color var(--as-dur) var(--as-ease), background var(--as-dur) var(--as-ease);
+}
+.hero-search-wrap:focus-within {
+  border-color: rgba(139,205,255,.5); background: rgba(255,255,255,.14);
+}
+.hero-search {
+  flex: 1; border: none; outline: none; background: transparent;
+  font-family: var(--as-font-sans); font-size: var(--as-text-sm); font-weight: 500;
+  color: var(--as-fg-on-dark);
+}
+.hero-search::placeholder { color: rgba(234,241,248,.45); }
+
+/* FAMILY CHIPS */
+.family-chips-row {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  max-width: 1200px; margin: 28px auto 0;
+}
+.family-chip {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.08); border: 1.5px solid rgba(139,205,255,.2);
+  border-radius: var(--as-radius-pill); padding: 9px 18px;
+  font-family: var(--as-font-sans); font-size: var(--as-text-sm); font-weight: 600;
+  color: var(--as-fg-on-dark); cursor: pointer;
+  transition: background var(--as-dur) var(--as-ease), border-color var(--as-dur) var(--as-ease), transform var(--as-dur-fast) var(--as-ease);
+  backdrop-filter: blur(8px);
+}
+.family-chip:hover {
+  background: rgba(139,205,255,.18); border-color: rgba(139,205,255,.5);
+  transform: translateY(-1px);
+}
+.family-chip-name { letter-spacing: -.01em; }
+.family-chip-count {
+  background: rgba(139,205,255,.25); border-radius: 50%;
+  min-width: 20px; height: 20px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; color: var(--as-accent-light);
+}
+
+/* KPI ROW */
+.kpi-row {
+  display: flex; gap: 12px;
+  max-width: 1200px; margin: 24px auto 0;
+}
+.kpi-card {
+  flex: 1; background: rgba(255,255,255,.07);
+  border: 1px solid rgba(139,205,255,.15);
+  border-radius: var(--as-radius-md); padding: 16px 20px;
+  backdrop-filter: blur(8px);
+}
+.kpi-card.featured {
+  background: rgba(139,205,255,.15);
+  border-color: rgba(139,205,255,.35);
+}
+.kpi-label {
+  font-size: var(--as-text-xs); font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(234,241,248,.55); margin-bottom: 8px;
+}
+.kpi-value {
+  font-size: var(--as-text-2xl); font-weight: 700;
+  color: var(--as-fg-on-dark); letter-spacing: -0.02em; line-height: 1;
+}
+.kpi-card.featured .kpi-value { color: var(--as-accent-light); }
+.kpi-note { font-size: var(--as-text-xs); color: rgba(234,241,248,.45); margin-top: 4px; }
+
+/* TABS */
+#tabs-wrapper {
+  background: rgba(255,255,255,.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--as-border);
+  padding: 0 32px;
+  position: sticky; top: 56px; z-index: 90;
+}
+#tablist {
+  display: flex; gap: 2px; overflow-x: auto;
+  scrollbar-width: none; padding: 8px 0;
+  max-width: 1200px; margin: 0 auto;
+}
+#tablist::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex-shrink: 0; padding: 7px 16px;
+  border-radius: var(--as-radius-pill);
+  font-size: var(--as-text-sm); font-weight: 600;
+  color: var(--as-fg-3); border: none; background: transparent;
+  white-space: nowrap; transition: background var(--as-dur) var(--as-ease), color var(--as-dur) var(--as-ease), box-shadow var(--as-dur) var(--as-ease);
+}
+.tab-btn:hover { background: rgba(26,77,122,.06); color: var(--as-accent); }
+.tab-btn[aria-selected="true"] {
+  background: var(--as-surface); color: var(--as-accent);
+  box-shadow: var(--as-shadow-md);
+}
+.tab-count {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: rgba(26,77,122,.1); color: var(--as-accent);
+  font-size: 10px; font-weight: 700; margin-left: 5px;
+  transition: background var(--as-dur), color var(--as-dur);
+}
+.tab-btn[aria-selected="true"] .tab-count { background: var(--as-accent); color: #fff; }
+
+/* MAIN CONTENT */
+#main-content {
+  max-width: 1200px; margin: 0 auto;
+  padding: 28px 32px 64px;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.filter-chip {
+  font-size: var(--as-text-xs); font-weight: 700; padding: 4px 12px;
+  border-radius: var(--as-radius-pill); border: 1.5px solid var(--as-border);
+  background: transparent; color: var(--as-fg-3); white-space: nowrap;
+  transition: all var(--as-dur-fast) var(--as-ease);
+}
+.filter-chip:hover:not([aria-pressed="true"]) { border-color: var(--as-accent); color: var(--as-accent); }
+.filter-chip[aria-pressed="true"] { background: var(--as-accent); color: #fff; border-color: var(--as-accent); }
+
+/* FAMILY HEADER */
+.sector-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+.sector-eyebrow {
+  font-size: var(--as-text-xs); font-weight: 700; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--as-fg-3); margin-bottom: 4px;
+}
+.sector-title { font-size: var(--as-text-xl); font-weight: 700; letter-spacing: -0.02em; }
+.sector-count { font-size: var(--as-text-sm); color: var(--as-fg-3); font-weight: 500; }
+
+/* COMPANY CARDS */
+#cards-container { display: flex; flex-direction: column; gap: 10px; }
+.company-card {
+  background: var(--as-surface); border: 1px solid var(--as-border);
+  border-radius: var(--as-radius-lg); padding: 18px 22px;
+  display: flex; align-items: flex-start; gap: 16px;
+  box-shadow: var(--as-shadow-sm);
+  transition: box-shadow var(--as-dur) var(--as-ease), transform var(--as-dur) var(--as-ease), border-color var(--as-dur) var(--as-ease);
+  cursor: pointer;
+}
+.company-card:hover {
+  box-shadow: var(--as-shadow-md); transform: translateY(-1px);
+  border-color: rgba(26,77,122,.25);
+}
+.company-card:focus-visible {
+  outline: 3px solid var(--as-accent); outline-offset: 2px;
+}
+.company-card.platform { border-left: 3px solid var(--as-accent); background: var(--as-surface-muted); }
+
+.card-avatar {
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--as-accent) 0%, #243a63 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--as-accent-light); font-size: 13px; font-weight: 700;
+  letter-spacing: -.01em; user-select: none;
+}
+.card-body { flex: 1; min-width: 0; }
+.card-name { font-size: var(--as-text-base); font-weight: 700; color: var(--as-fg-1); margin-bottom: 4px; }
+.card-def { font-size: var(--as-text-sm); color: var(--as-fg-2); margin-bottom: 8px; line-height: 1.45;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.card-tag {
+  font-size: var(--as-text-xs); font-weight: 600; padding: 3px 9px;
+  border-radius: var(--as-radius-pill);
+  background: rgba(26,77,122,.07); color: var(--as-accent);
+  border: 1px solid rgba(26,77,122,.12);
+}
+.card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
+.card-family-tag {
+  font-size: 10px; font-weight: 700; padding: 2px 8px;
+  border-radius: var(--as-radius-pill); letter-spacing: .04em;
+  background: rgba(134,191,198,.12); color: #2e7580; border: 1px solid rgba(134,191,198,.25);
+}
+
+.status-badge { font-size: var(--as-text-xs); font-weight: 700; padding: 4px 12px; border-radius: var(--as-radius-pill); white-space: nowrap; }
+.status-portfolio  { background: rgba(47,125,91,.1);  color: #2f7d5b; border: 1px solid rgba(47,125,91,.2);  }
+.status-integrated { background: rgba(134,191,198,.15); color: #2e7580; border: 1px solid rgba(134,191,198,.3); }
+.status-coparticipada { background: rgba(26,77,122,.1); color: var(--as-accent); border: 1px solid rgba(26,77,122,.2); }
+
+.card-link {
+  font-size: var(--as-text-xs); color: var(--as-accent-light);
+  font-weight: 600; opacity: .8; display: flex; align-items: center; gap: 4px;
+  transition: opacity var(--as-dur-fast);
+}
+.card-link:hover { opacity: 1; }
+
+/* EMPTY STATE */
+.empty-state {
+  text-align: center; padding: 48px 24px;
+  color: var(--as-fg-3); font-size: var(--as-text-sm);
+}
+.empty-state p { margin-top: 8px; }
+
+/* MODAL */
+#modal-backdrop {
+  position: fixed; inset: 0; z-index: var(--as-z-overlay);
+  background: rgba(34,30,65,.45); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+#modal-backdrop[hidden] { display: none; }
+
+.modal {
+  background: var(--as-surface); border-radius: var(--as-radius-lg);
+  width: 100%; max-width: 660px; max-height: 90vh; overflow-y: auto;
+  box-shadow: var(--as-shadow-lg);
+  animation: modal-in var(--as-dur-slow) var(--as-ease);
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to   { opacity: 1; transform: none; }
+}
+.modal-header {
+  background: linear-gradient(135deg, #1a4d7a 0%, #243a63 52%, #221e41 100%);
+  border-radius: var(--as-radius-lg) var(--as-radius-lg) 0 0;
+  padding: 24px 28px; position: relative; overflow: hidden;
+}
+.modal-header::before {
+  content: ''; position: absolute; top: -30%; right: -5%; width: 50%; height: 160%;
+  background: radial-gradient(ellipse, rgba(139,205,255,.2) 0%, transparent 65%);
+  pointer-events: none;
+}
+.modal-close {
+  position: absolute; top: 18px; right: 20px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(255,255,255,.12); border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--as-dur-fast);
+}
+.modal-close:hover { background: rgba(255,255,255,.22); }
+.modal-close:focus-visible { outline: 3px solid var(--as-accent-light); outline-offset: 2px; }
+.modal-avatar {
+  width: 52px; height: 52px; border-radius: 14px;
+  background: rgba(139,205,255,.18); border: 1.5px solid rgba(139,205,255,.35);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--as-accent-light); font-size: 16px; font-weight: 700; margin-bottom: 12px;
+  user-select: none;
+}
+.modal-name { font-size: var(--as-text-xl); font-weight: 700; color: var(--as-fg-on-dark); letter-spacing: -.02em; margin-bottom: 4px; }
+.modal-sector { font-size: var(--as-text-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(139,205,255,.7); }
+.modal-body { padding: 24px 28px; }
+.modal-status-row { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+.modal-status-label { font-size: var(--as-text-xs); font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--as-fg-3); margin-bottom: 6px; }
+.modal-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.modal-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: var(--as-text-xs); font-weight: 700; color: var(--as-accent);
+  background: rgba(26,77,122,.07); border: 1.5px solid rgba(26,77,122,.15);
+  padding: 7px 14px; border-radius: var(--as-radius-pill);
+  transition: all var(--as-dur-fast) var(--as-ease);
+}
+.modal-link:hover { background: var(--as-accent); color: #fff; border-color: var(--as-accent); }
+.modal-link:focus-visible { outline: 3px solid var(--as-accent); outline-offset: 2px; }
+.modal-divider { border: none; border-top: 1px solid var(--as-border); margin: 0 0 20px; }
+.modal-meta-row { display: flex; gap: 20px; margin-bottom: 20px; }
+.modal-field { margin-bottom: 20px; }
+.modal-field-half { flex: 1; min-width: 0; margin-bottom: 0; }
+.field-label { font-size: var(--as-text-xs); font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--as-fg-3); margin-bottom: 6px; }
+.field-value { font-size: 14px; color: var(--as-fg-2); line-height: 1.55; }
+.field-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.field-tag {
+  font-size: var(--as-text-xs); font-weight: 600; padding: 4px 11px;
+  border-radius: var(--as-radius-pill);
+  background: rgba(26,77,122,.07); color: var(--as-accent); border: 1px solid rgba(26,77,122,.12);
+}
+.modal-financials {
+  display: flex; gap: 0; border: 1px solid var(--as-border);
+  border-radius: var(--as-radius-sm); overflow: hidden;
+  margin-bottom: 20px;
+}
+.modal-kpi {
+  flex: 1; padding: 14px 18px;
+  border-right: 1px solid var(--as-border);
+}
+.modal-kpi:last-child { border-right: none; }
+.kpi-value-sm { font-size: var(--as-text-base); font-weight: 700; color: var(--as-fg-1); margin-top: 3px; }
+.modal-observaciones {
+  background: rgba(26,77,122,.04); border: 1px solid rgba(26,77,122,.1);
+  border-radius: var(--as-radius-sm); padding: 12px 16px; margin-bottom: 20px;
+}
+.modal-more-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: -4px; padding-top: 4px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #topbar { padding: 0 16px; }
+  #tabs-wrapper { padding: 0 16px; }
+  #main-content { padding: 20px 16px 48px; }
+  #kpi-strip { padding: 20px 16px 24px; }
+  .kpi-row { flex-direction: column; gap: 8px; }
+  .filter-bar { flex-wrap: wrap; gap: 8px; }
+  .company-card { flex-wrap: wrap; }
+  .card-right { flex-direction: row; align-items: center; width: 100%; justify-content: space-between; }
+  .modal-meta-row { flex-direction: column; gap: 16px; }
+  .modal-financials { flex-direction: column; }
+  .modal-kpi { border-right: none; border-bottom: 1px solid var(--as-border); }
+  .modal-kpi:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header id="topbar"></header>
+
+<!-- KPI STRIP -->
+<section id="kpi-strip"></section>
+
+<!-- TABS + CONTENT -->
+<div id="tabs-wrapper">
+  <nav id="tablist" role="tablist" aria-label="Familias del portfolio"></nav>
+</div>
+
+<main id="main-content">
+  <div id="filter-bar-wrap"></div>
+  <div id="cards-container" role="tabpanel"></div>
+</main>
+
+<!-- MODAL -->
+<div id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-company-name" hidden></div>
+
+<script>
+
+const PORTFOLIO_DATA = {"families":[{"id":"innometal","name":"Familia Innometal Group","companies":[{"name":"Innometal Group","level":"Plataforma","sector":"Metal y equipos","status":"En cartera / coparticipada","url":"https://www.innometalgroup.com/","urls":["https://mirai.investments/en/innometal-group-2/","https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/","https://www.cuatrecasas.com/en/global/art/mirai-opens-up-capital-of-subsidiaries-innometal-and-ohmnia-to-public-and-private-partners"],"platform":true,"sede":"Bilbao / Vitoria-Gasteiz","anioAdquisicion":"2019","rol":"Plataforma de transformación metálica y montaje","modeloNegocio":"Grupo industrial B2B de fabricación metálica, montaje de equipos e integración de capacidades productivas","productos":"Diseño, fabricación, montaje, transformación metálica, equipos industriales, instalaciones de proceso, productos metálicos especiales","mercados":"OEMs industriales nacionales e internacionales; metal, equipos, construcción industrializada, farma, cosmética, renovables","facturacion":"130 M€","empleados":"650","ebitda":"","observaciones":"No es una sociedad operativa única en todos los casos; funciona como plataforma/familia. Mirai e Innometal dan cifras agregadas de grupo."},{"name":"IMAR","level":"Empresa inicial / ancla","sector":"Transformación metálica; metal perforado, plegado, punzonado y expandido","status":"En cartera","url":"https://www.imar.es/","urls":["https://mirai.investments/en/innometal-group-2/","https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"],"platform":false,"sede":"Domicilio social: Calle Fuentecillas 17-19, Vitoria-Gasteiz; plantas en Ortuella y Miranda de Ebro","anioAdquisicion":"2019","rol":"Empresa inicial / ancla de Innometal","modeloNegocio":"Fabricación industrial B2B por proyecto; ingeniería y fabricación de soluciones metálicas complejas","productos":"Chapa perforada, abocardada, estampada y metal expandido; ingeniería, diseño, fabricación y sistemas instalables","mercados":"Industria, arquitectura singular, electrónica, ferrocarril, acústica, mobiliario, maquinaria, filtros, alimentación","facturacion":"+20 M€","empleados":"80","ebitda":"","observaciones":"No confundir marca histórica IMAR con sociedad actual INNOMETAL 2019 SL. EEFF completos no localizados en abierto."},{"name":"Naivan","level":"Compañía integrada","sector":"Fabricación metálica avanzada, pintura y montaje","status":"En cartera","url":"https://www.naivan.com/","urls":["https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/","https://www.innometalgroup.com/en/installations/"],"platform":false,"sede":"Calle Fuentecillas 17-19, Vitoria-Gasteiz, Álava","anioAdquisicion":"","rol":"Compañía integrada en Innometal","modeloNegocio":"Gestión integral de proyectos de fabricación metálica, pintura y montaje","productos":"Transformación de chapa, calderería, soldadura, corte láser, punzonado, plegado, mecanizado, pintura, montaje final, ingeniería de producto, prototipado","mercados":"Máquina herramienta, industria 4.0, ferrocarril, renovables, defensa, autobús","facturacion":"+10 M€","empleados":">100","ebitda":"","observaciones":"No he localizado fecha exacta de adquisición/integración por Mirai en fuente pública abierta. Hay divergencia de empleados entre fuentes."},{"name":"Fervilor","level":"Compañía integrada","sector":"Corte láser, soldadura, plegado, mecanizado e impresión 3D","status":"En cartera","url":"https://www.fervilor.com/","urls":["https://mirai.investments/en/our-portfolio/fervilor/","https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"],"platform":false,"sede":"Calle Zorrolleta 13, Polígono Jundiz, Vitoria-Gasteiz, Álava","anioAdquisicion":"2022","rol":"Compañía integrada en Innometal","modeloNegocio":"Fabricación metálica de alta complejidad y subcontratación industrial","productos":"Corte láser plano, tubo y 3D; grabado, soldadura, plegado, mecanizado, fabricación aditiva, chasis de autobús, estructuras y componentes de alto valor añadido","mercados":"Autobuses, climatización sostenible, elevación, construcción industrializada, ferrocarril","facturacion":"+7 M€","empleados":">30","ebitda":"","observaciones":"La cifra de empleados varía según fuente. EEFF completos no localizados en abierto."},{"name":"Model Metal","level":"Compañía integrada","sector":"Corte de bobina, calderería, estructuras metálicas y montajes industriales","status":"En cartera","url":"https://www.modelmetal.es/","urls":["https://mirai.investments/portfolio/model-metal/","https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"],"platform":false,"sede":"Polígono Industrial San Colombar, 31360 Funes, Navarra","anioAdquisicion":"","rol":"Compañía integrada en Innometal","modeloNegocio":"Fabricación y pintura de piezas metálicas; centro de servicio y transformación metálica","productos":"Corte láser, punzonado, plegado, soldadura, pintura epoxi, montajes industriales, corte de bobina, calderería, estructuras metálicas","mercados":"Renovables, climatización, construcción industrializada, vending, automatización y bienes de equipo","facturacion":"+22 M€","empleados":">40 ","ebitda":"","observaciones":"No he localizado fecha exacta de adquisición/integración por Mirai. La sociedad adquirió unidades productivas de Servichap y Peymo en 2020."},{"name":"Servichap","level":"Integrada en Model Metal","sector":"Centro de servicio de procesado de bobina","status":"Integrada en Model Metal","url":"https://servichap.com/en","urls":["https://mirai.investments/portfolio/model-metal/","https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"],"platform":false,"sede":"Polígono Industrial San Colombar, 31360 Funes, Navarra","anioAdquisicion":"2020","rol":"Unidad productiva integrada en Model Metal","modeloNegocio":"Centro de servicio de procesado de bobina de acero","productos":"Procesado de bobinas de acero, corte longitudinal, corte transversal, líneas de corte, formatos planos y fleje","mercados":"Vending, construcción industrializada, renovables, vehículos comerciales, automatización y bienes de equipo","facturacion":"+15 M€","empleados":"10","ebitda":"","observaciones":"La fuente de Mirai indica que Model Metal adquirió en 2020 unidades productivas de las extintas Servichap y Peymo. No trato Servichap como participada separada salvo validación mercantil adicional."},{"name":"Peymo","level":"Integrada en Model Metal","sector":"Estructuras metálicas / actividad industrial procedente de unidad productiva","status":"Integrada en Model Metal","url":"N/A","urls":["https://mirai.investments/portfolio/model-metal/"],"platform":false,"sede":"Funes, Navarra","anioAdquisicion":"2020","rol":"Unidad productiva histórica integrada en Model Metal","modeloNegocio":"Actividad industrial incorporada a Model Metal tras concurso de acreedores","productos":"","mercados":"Transformación metálica / estructuras metálicas","facturacion":"","empleados":"No localizado","ebitda":"","observaciones":"No he localizado web operativa ni ficha mercantil suficiente. Debe tratarse como unidad productiva extinta, no como participada independiente."},{"name":"Afarvi","level":"Compañía integrada","sector":"Instalaciones de proceso de fluidos para industria farmacéutica y cosmética","status":"En cartera","url":"https://www.afarvi.com/","urls":["https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/","https://www.innometalgroup.com/en/installations/"],"platform":false,"sede":"Calle Atlántico 10, 28864 Ajalvir, Madrid","anioAdquisicion":"2023","rol":"Compañía integrada en Innometal","modeloNegocio":"Ingeniería, fabricación, instalación y mantenimiento de instalaciones de proceso de fluidos","productos":"Diseño, fabricación, instalación, automatización, control, cualificación, validación, mantenimiento; PW, WFI, vapor puro, biorreactores, CIP, reactores, skids","mercados":"Farmacéutica, cosmética, biotecnología, química, alimentación, veterinaria, nutracéutica","facturacion":"+25 M€ según Innometal; 21 M€ en 2022 según prensa sectorial","empleados":"+120 según Innometal; 141 según eInforma","ebitda":"","observaciones":"Buena información de actividad y ventas aproximadas. EEFF completos no localizados en abierto."},{"name":"MAM","level":"Compañía integrada","sector":"Corte láser, soldadura, plegado, montaje y ensamblajes electromecánicos","status":"En cartera","url":"https://www.mam.es/","urls":["https://mirai.investments/portfolio/mam/","https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"],"platform":false,"sede":"Domicilio mercantil: Calle Molí s/n, Nave 2, Martorelles, Barcelona; fábrica/oficina principal: Pla dels Avellaners 10, Santa Perpètua de Mogoda, Barcelona","anioAdquisicion":"2024","rol":"Compañía integrada en Innometal","modeloNegocio":"Desarrollo de proyectos integrales de fabricación metálica e instalación mecánica","productos":"Corte láser, soldadura, plegado, punzonado, inserción de pernos, pulido, ensamblajes, piezas y estructuras metálicas sofisticadas","mercados":"Vending y sistemas de cobro, electromedicina, renovables, entretenimiento, climatización","facturacion":"30 M€","empleados":"160 según Innometal; 134 según Empresite","ebitda":"","observaciones":"La cifra de ventas/empleados de Innometal puede reflejar actividad MAM/Metalec de forma agregada; validar con EEFF en fase final."},{"name":"Metalec","level":"Compañía integrada","sector":"Montajes electromecánicos de alto valor añadido","status":"En cartera","url":"https://metalec.es/","urls":["https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/","https://www.innometalgroup.com/en/installations/"],"platform":false,"sede":"Factory/Main office: Pla dels Avellaners 10, Santa Perpètua de Mogoda, Barcelona","anioAdquisicion":"","rol":"En cartera / coparticipada","modeloNegocio":"Compañía integrada en Innometal","productos":"Montaje electromecánico de alto valor añadido","mercados":"Montaje electromecánico, envolventes metálicas, elementos funcionales y decorativos para bienes de equipo, ingeniería de producto, prototipado, logística dedicada","facturacion":"Vending y sistemas de cobro, electromedicina, renovables, entretenimiento, smart cities","empleados":"","ebitda":"30 M€ según Innometal; rango 3-50 M€ según Axesor","observaciones":""},{"name":"Tecro","level":"Compañía integrada","sector":"Entreplantas, escaleras, barandillas y soluciones metálicas modulares","status":"En cartera","url":"https://www.tecro.es/","urls":["https://mirai.investments/portfolio/tecro/","https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"],"platform":false,"sede":"Finca Los Prados s/n, Parcela 261 del Polígono 50, 26256 Villalobar de Rioja, La Rioja","anioAdquisicion":"2024","rol":"Compañía integrada en Innometal","modeloNegocio":"Diseño y fabricación de soluciones metálicas modulares para aprovechamiento de espacios","productos":"Entreplantas, escaleras, barandillas, estructuras modulares metálicas, soluciones domésticas e industriales, altillos y plataformas","mercados":"Construcción, logística y almacenamiento, industria, retail, B2B/B2C","facturacion":"9 M€ según Innometal; 8 M€ según prensa de operación","empleados":"30 según Innometal; 29 según Axesor","ebitda":"","observaciones":"Buena trazabilidad mercantil y operativa. EEFF completos no localizados en abierto."},{"name":"IMAT","level":"Compañía integrada","sector":"Mobiliario técnico para aeropuertos y edificios colectivos","status":"En cartera","url":"https://www.imat.es/es/","urls":["https://mirai.investments/portfolio/imat/","https://capital-riesgo.es/en/articles/mirai-investments-acquires-lava-based-company-imat/"],"platform":false,"sede":"Paduleta Kalea 5, Polígono Jundiz, Vitoria-Gasteiz, Álava","anioAdquisicion":"2025","rol":"Compañía integrada en Innometal","modeloNegocio":"Fabricación B2B de mobiliario técnico para infraestructuras y zonas de espera","productos":"Diseño, fabricación y suministro de asientos para aeropuertos, hospitales, terminal marítima, autobús y tren; sistemas Master, Plus+Line, Recliner, Wave y Sardi","mercados":"Aeropuertos, hospitales, terminales marítimas, autobús, tren, zonas de espera","facturacion":"5 M€ en 2024","empleados":"12 según fuente mercantil abierta","ebitda":"","observaciones":"La integración industrial en Innometal está clara; la estructura mercantil debe revisarse porque algunas fuentes abiertas pueden mostrar vehículos societarios intermedios."}]},{"id":"ohmnia","name":"Familia Ohmnia Group","companies":[{"name":"Ohmnia Group","level":"Plataforma","sector":"Electrónica industrial / EMS","status":"En cartera / coparticipada","url":"https://www.ohmnia.es/","urls":["https://mirai.investments/en/ohmnia-2/","https://www.cuatrecasas.com/en/global/art/mirai-opens-up-capital-of-subsidiaries-innometal-and-ohmnia-to-public-and-private-partners"],"platform":true,"sede":"Calle Urrundi 10, 01013 Vitoria-Gasteiz, Álava","anioAdquisicion":"2020","rol":"Plataforma de electrónica industrial de Mirai","modeloNegocio":"Grupo EMS B2B; integración de fabricantes de electrónica industrial, cableado, tarjetas, teclados, subconjuntos y soluciones electromecánicas","productos":"Diseño, ingeniería, industrialización, fabricación, montaje electrónico, cableados, tarjetas electrónicas, teclados de membrana, teclados capacitivos, conjuntos mecatrónicos","mercados":"Aeronáutica, ferrocarril, renovables, defensa, movilidad eléctrica, control de accesos, elevación, electromedicina, industria","facturacion":"","empleados":"","ebitda":"","observaciones":""},{"name":"TER / Técnicas Electrónicas Reunidas","level":"Empresa inicial / ancla","sector":"Montaje de circuitos impresos, placas electrónicas y conjuntos electromecánicos","status":"En cartera","url":"https://www.e-ter.com/","urls":["https://mirai.investments/en/ohmnia-2/","https://mirai.investments/portfolio/ter/"],"platform":false,"sede":"","anioAdquisicion":"","rol":"","modeloNegocio":"","productos":"","mercados":"","facturacion":"","empleados":"","ebitda":"","observaciones":""},{"name":"Coycavi","level":"Compañía integrada","sector":"Cableados e interconexiones electrónicas","status":"En cartera","url":"https://www.coycavi.com/","urls":["https://mirai.investments/mirai-investments-adquiere-arteixo-telecom-y-refuerza-su-liderazgo-en-el-sector-electronico/","https://mirai.investments/portfolio/coycavi/"],"platform":false,"sede":"Calle Bekolarra 2, Pabellón 1, Polígono Industrial de Ali-Gobeo, 01010 Vitoria-Gasteiz, Álava","anioAdquisicion":"Desde 2020; fecha exacta no localizada en abierto","rol":"Compañía integrada en Ohmnia","modeloNegocio":"Fabricación B2B de cableados e interconexiones electrónicas","productos":"Cableados, interconexiones electrónicas, cableados de grandes dimensiones, microcableados, soluciones adaptadas a proyecto","mercados":"Energías renovables, máquina herramienta, automatización, ferroviario, elevación, electrónica, bienes de equipo","facturacion":"","empleados":"","ebitda":"","observaciones":"+65 según Mirai; 70 según eInforma"},{"name":"Tectron","level":"Compañía integrada","sector":"Teclados de membrana, teclados capacitivos y carátulas","status":"En cartera","url":"https://www.tectron.es/","urls":["https://mirai.investments/mirai-investments-adquiere-arteixo-telecom-y-refuerza-su-liderazgo-en-el-sector-electronico/","https://mirai.investments/portfolio/tectron/"],"platform":false,"sede":"Portal de Gamarra 44, Zona Industrial de Gamarra, 01013 Vitoria-Gasteiz, Álava","anioAdquisicion":"Desde 2020; fecha exacta no localizada en abierto","rol":"Compañía integrada en Ohmnia","modeloNegocio":"Fabricación B2B de interfaces industriales impresas y electrónicas","productos":"Teclados de membrana, teclados capacitivos, carátulas, serigrafía industrial, impresión digital","mercados":"Electromedicina, bienes de equipo, elevación, electrodomésticos, máquina herramienta, equipos médicos y diagnóstico","facturacion":"2,5 M€ según Empresia","empleados":"","ebitda":"","observaciones":"+25 según Mirai; 24 según Axesor"},{"name":"IDK Elektronika","level":"Compañía integrada","sector":"Montaje de circuitos electrónicos y conjuntos electromecánicos","status":"En cartera","url":"https://www.idknet.net/","urls":["https://mirai.investments/mirai-investments-adquiere-arteixo-telecom-y-refuerza-su-liderazgo-en-el-sector-electronico/","https://mirai.investments/portfolio/idk/"],"platform":false,"sede":"Errenteria, Gipuzkoa; planta de producción de 6.000 m2","anioAdquisicion":"Desde 2020; fecha exacta no localizada en abierto","rol":"Compañía integrada en Ohmnia","modeloNegocio":"EMS industrial; ingeniería, industrialización y fabricación de proyectos electrónicos complejos","productos":"Montaje de circuitos electrónicos, fabricación de tarjetas, ingeniería, industrialización, ensamblaje de circuitos en conjuntos electromecánicos","mercados":"Movilidad eléctrica, control de accesos, elevación, ferrocarril, electrónica de consumo, IoT, smart city","facturacion":"","empleados":"","ebitda":"","observaciones":""},{"name":"Alcoelectro","level":"Compañía integrada","sector":"Montaje electrónico y mecatrónico para industrias de alto valor añadido","status":"En cartera","url":"https://www.alcoelectro.com/","urls":["https://mirai.investments/mirai-investments-adquiere-la-empresa-de-equipos-electronicos-alcoelectro/","https://mirai.investments/portfolio/alcoelectro/"],"platform":false,"sede":"Calle Gran Vía Don Diego López de Haro 45, 9º, Bilbao, Bizkaia; instalación productiva de 1.200 m2 en Madrid","anioAdquisicion":"2024","rol":"Compañía integrada en Ohmnia","modeloNegocio":"EMS y montaje mecatrónico B2B para industrias de alto valor añadido","productos":"Montaje electrónico, montaje mecatrónico, fabricación de equipos electrónicos, prototipos, grandes series, producto terminado llave en mano, rework, industrialización de producto","mercados":"Ferroviario, comunicaciones, seguridad, elevación, iluminación, IoT, telecomunicaciones, electrónica de consumo, informática, señalética, electrónica industrial, electromedicina","facturacion":"2,5 M€ según Empresia","empleados":"","ebitda":"","observaciones":"+25 según Mirai; 27 según Axesor; 32 según eInforma"},{"name":"Arteixo Telecom","level":"Compañía integrada","sector":"Diseño y fabricación de tarjetas electrónicas","status":"En cartera","url":"https://www.arteixo.com/","urls":["https://mirai.investments/mirai-investments-adquiere-arteixo-telecom-y-refuerza-su-liderazgo-en-el-sector-electronico/","https://capital-riesgo.es/es/articles/mirai-investments-adquiere-arteixo-telecom-y-refuerza-su-liderazgo-en-el-sector-electronico/"],"platform":false,"sede":"As Pontes de García Rodríguez, A Coruña; fábrica de 6.000 m2 sobre parcela de 16.000 m2; oficina comercial en Madrid","anioAdquisicion":"2025","rol":"Compañía integrada en Ohmnia","modeloNegocio":"EMS y soluciones electrónicas industriales de ciclo completo","productos":"Diseño, creación, fabricación, instalación, comercialización, mantenimiento, reparación y servicio postventa de equipos electrónicos de comunicaciones e industriales","mercados":"Defensa, ferrocarril, renovables, aeronáutica, electrónica industrial, comunicaciones","facturacion":"12,4 M€","empleados":"","ebitda":"","observaciones":"Administrador único: CLERBIL SL según fuente mercantil"},{"name":"Idistek","level":"Compañía integrada","sector":"Diseño, fabricación e industrialización de tarjetas y conjuntos electrónicos complejos","status":"En cartera","url":"https://www.idistek.com/","urls":["https://capital-riesgo.es/en/articles/mirai-acquires-gipuzkoa-based-company-idistek/","https://es.linkedin.com/posts/mirai-investments_nota-de-prensa-adquisici%C3%B3n-idistek-activity-7422585703550836736-ZWpx"],"platform":false,"sede":"Zikuñaga Bailara 48, 20120 Hernani, Gipuzkoa","anioAdquisicion":"2026","rol":"Compañía integrada en Ohmnia","modeloNegocio":"EMS; diseño, industrialización y fabricación de tarjetas y conjuntos electrónicos complejos","productos":"Diseño electrónico, industrialización, fabricación de tarjetas electrónicas complejas, conjuntos electrónicos, ensamblajes, validación final, ingeniería a producto terminado","mercados":"Electromedicina, HVAC, industria, multimedia; también sectores de alto valor añadido como aeronáutica, ferrocarril, renovables y defensa","facturacion":"17 M€ según ficha Mirai; 8 M€ según prensa de operación","empleados":"","ebitda":"","observaciones":"40"}]},{"id":"labery","name":"Familia Labery","companies":[{"name":"Labery","level":"Plataforma","sector":"Cosmética y cuidado personal / CDMO","status":"En cartera","url":"https://www.labery.es/","urls":["https://mirai.investments/en/labery/","https://mirai.investments/labery-2/"],"platform":true,"sede":"","anioAdquisicion":"2026","rol":"En cartera","modeloNegocio":"División cosmética de Mirai","productos":"CDMO full service para desarrollo y fabricación de productos cosméticos a terceros","mercados":"Ideación, I+D+i, formulación, fabricación, llenado, envasado, packaging, acondicionamiento, logística y entrega final","facturacion":"Cosmética, cuidado personal, perfumería, parafarmacia, marcas cosméticas, laboratorios y terceros","empleados":"","ebitda":"Previsión superior a 25 M€ en 2026","observaciones":""},{"name":"Ternum Cosmetics","level":"Compañía integrada","sector":"I+D, formulación y desarrollo cosmético","status":"En cartera","url":"https://www.ternum.com/","urls":["https://mirai.investments/en/our-portfolio/ternum-cosmetics/","https://mirai.investments/en/labery/"],"platform":false,"sede":"Barberà del Vallès, Barcelona","anioAdquisicion":"2026","rol":"Motor de innovación, I+D+i y formulación de Labery","modeloNegocio":"Servicios B2B de I+D+i, diseño y formulación cosmética a medida","productos":"Creación de marca cosmética, formulación, I+D+i, estudios de estabilidad y compatibilidad, evaluación de seguridad, PIF, asesoramiento en marketing, fabricación y envasado ad hoc, control de calidad","mercados":"Cosmética personalizada, cosmética natural, cosmética de tratamiento, marcas cosméticas, cuidado personal","facturacion":"","empleados":"8 según Axesor; 11 según Empresite","ebitda":"","observaciones":"La razón social parece haber cambiado a Labery Solutions SL manteniendo CIF B60995156; conviene validar en Registro Mercantil. No hay ventas abiertas específicas fiables."},{"name":"Laboratorios Coper","level":"Compañía integrada","sector":"Fabricación, envasado y acondicionamiento cosmético","status":"En cartera","url":"https://mirai.investments/en/labery/","urls":["https://mirai.investments/en/labery/","https://mirai.investments/labery-2/"],"platform":false,"sede":"Domicilio social mercantil: Gran Vía Don Diego López de Haro 45, 9º, Bilbao; instalación operativa: Miquel Torelló Pagès 33-35, nave 9, Molins de Rei, Barcelona","anioAdquisicion":"2024","rol":"Fabricación, desarrollo, envasado y acondicionamiento dentro de Labery","modeloNegocio":"Fabricación B2B / tercerista de cosmética y perfumería; desarrollo, producción y envasado","productos":"Desarrollo de producto, producción de cosmética y perfumería, cremas, geles acuosos, colonias, perfumes, cosmética decorativa, barras y brillos de labios, maquillajes fluidos, máscaras de pestañas, envasado y acondicionado","mercados":"Cosmética, perfumería, farmacia, lujo, cuidado de la piel, fragancias","facturacion":"Parte de Coper+Jumsa: más de 10 M€ en el momento de adquisición; facturación individual no localizada en abierto","empleados":"12 según Axesor; Coper+Jumsa más de 90 empleados según Mirai","ebitda":"","observaciones":"La información pública mezcla Coper y Jumsa como operación conjunta. Para EEFF separados hay que acudir a cuentas depositadas o bases mercantiles completas."},{"name":"Jumsa Cosmetic","level":"Compañía integrada","sector":"Fabricación y llenado cosmético","status":"En cartera","url":"https://mirai.investments/en/labery/","urls":["https://mirai.investments/en/labery/","https://mirai.investments/labery-2/"],"platform":false,"sede":"Domicilio social mercantil: Gran Vía Don Diego López de Haro 45, 9º, Bilbao; instalación operativa: Carrer del Samontà 15-17, Sant Joan Despí, Barcelona","anioAdquisicion":"2024","rol":"Fabricación, envasado y acondicionamiento dentro de Labery","modeloNegocio":"Servicios B2B de envasado, acondicionado y fabricación cosmética / perfumería","productos":"Envasado de fluidos, emulsiones, granulados sólidos y polvo libre; acondicionamiento; fabricación de cosméticos y perfumería; servicios adaptados a cliente","mercados":"Cosmética, perfumería, salud y belleza, terceros industriales","facturacion":"Parte de Coper+Jumsa: más de 10 M€ en el momento de adquisición; rango Axesor 3.000.001 € - 50.000.000 €","empleados":"51 según Empresite; rango 51-200 según Axesor; Coper+Jumsa más de 90 empleados según Mirai","ebitda":"","observaciones":"La información pública mezcla Coper y Jumsa como operación conjunta. Algunas fuentes sectoriales antiguas la clasifican como distribución, pero su web y Mirai la presentan como envasado/fabricación cosmética."},{"name":"Cosmeprint","level":"Compañía integrada","sector":"Packaging para cosmética, cuidado personal, alimentación y parafarmacia","status":"En cartera","url":"https://www.cosmeprint.com/","urls":["https://mirai.investments/en/labery/","https://mirai.investments/labery-2/","https://capital-riesgo.es/es/articles/mirai-investments-adquiere-cosmeprint-y-amplia-su-presencia-en-el-sector-de-cosmetica-y-cuidado-personal/"],"platform":false,"sede":"Polígono Industrial La Plana, nave 6 y 7, Carretera de Llinars a Cànoves, km 44,5, 08458 Sant Pere de Vilamajor, Barcelona","anioAdquisicion":"2026","rol":"Packaging cosmético dentro de Labery","modeloNegocio":"Consultoría, comercialización y suministro de soluciones de packaging para cosmética y cuidado personal","productos":"Packaging, diseño, suministro, acabados finales, alternativas recicladas, soluciones de envase para cosmética, cuidado personal, parafarmacia y alimentación","mercados":"Cosmética, cuidado personal, parafarmacia, alimentación, marcas boutique, laboratorios internacionales","facturacion":"10 M€ según Mirai; cerca de 10 M€ en 2023 según prensa; rango Iberinform 6.000.000 € - 15.000.000 €","empleados":"11-25 según Iberinform; 11-50 según Axesor","ebitda":"","observaciones":"La actividad puede aparecer en fuentes mercantiles como comercio mayorista, aunque Mirai la presenta estratégicamente como packaging para cosmética."}]},{"id":"salud","name":"Familia Grupo Salud","companies":[{"name":"Salud Mirai","level":"Plataforma / grupo clínico","sector":"Medicina estética, cirugía estética, medicina capilar y medicina estética facial","status":"En cartera","url":"https://mirai.investments/salud/","urls":["https://mirai.investments/salud/"],"platform":true,"sede":"","anioAdquisicion":"2024 / 2025","rol":"En cartera","modeloNegocio":"Plataforma clínica de medicina y cirugía estética","productos":"Grupo clínico de servicios médicos privados especializados; prestación de tratamientos médicos, quirúrgicos y médico-estéticos","mercados":"Medicina estética, cirugía estética, cirugía plástica, medicina capilar, cirugía capilar, medicina estética facial, tratamientos mínimamente invasivos, diagnóstico facial, planificación anatómica","facturacion":"Mercado privado de medicina estética, cirugía estética, cirugía capilar y estética facial en España","empleados":"","ebitda":"","observaciones":"Grupo con 8 centros en 6 comunidades autónomas según Mirai"},{"name":"Clínicas Diego de León","level":"Compañía / proyecto integrado","sector":"Cirugía y medicina estética","status":"En cartera","url":"https://www.clinicasdiegodeleon.com/","urls":["https://mirai.investments/salud/"],"platform":false,"sede":"Madrid; clínicas en C/ Diego de León 69, Paseo de la Habana 1 y Hospital Fuensanta según web corporativa","anioAdquisicion":"2024 / 2025","rol":"Proyecto clínico integrado en Salud Mirai","modeloNegocio":"Prestación de servicios médicos privados en medicina estética, cirugía estética y cirugía plástica","productos":"Medicina estética, cirugía plástica, cirugía estética, tratamientos faciales, corporales, adelgazamiento, tratamientos capilares, rinomodelación, aumento de pecho, abdominoplastia, blefaroplastia, lifting sin cirugía, tratamientos antiaging","mercados":"Medicina estética privada, cirugía estética, cirugía plástica, estética corporal y facial","facturacion":"","empleados":"","ebitda":"","observaciones":"La marca puede operar con varias clínicas y sociedades vinculadas. La razón social incluida es la más directamente localizada en fuentes mercantiles, pero conviene validar estructura completa en Registro Mercantil / SABI."},{"name":"Livet","level":"Compañía / proyecto integrado","sector":"Medicina y cirugía capilar","status":"En cartera","url":"https://www.livet.es/","urls":["https://mirai.investments/salud/"],"platform":false,"sede":"Calle Velázquez 146, local, Madrid","anioAdquisicion":"2024 / 2025","rol":"Proyecto clínico integrado en Salud Mirai","modeloNegocio":"Clínica privada especializada en medicina y cirugía capilar, con extensión a medicina estética y otros servicios médicos","productos":"Trasplante capilar, microinjerto capilar FUE, cirugía capilar, medicina capilar, diagnóstico capilar, seguimiento personalizado, medicina estética, tratamientos faciales y corporales, odontología según presencia digital","mercados":"Medicina capilar, cirugía capilar, medicina estética, trasplante capilar, estética privada","facturacion":"","empleados":"","ebitda":"","observaciones":"La web oficial de Livet identifica como titular a Clínica Fernández-Villar SL. Existe también Livet Medicina y Cirugía Estética SL en fuentes mercantiles, por lo que conviene validar qué sociedades forman el perímetro adquirido."},{"name":"Facial Clinique","level":"Compañía / proyecto integrado","sector":"Medicina estética facial","status":"En cartera","url":"https://www.facialclinique.com/","urls":["https://mirai.investments/salud/"],"platform":false,"sede":"Domicilio social: Gran Vía Don Diego López de Haro 45, 9º, Bilbao; red con presencia en Barcelona, Santander, Castellón, Palma de Mallorca y Bilbao según prensa","anioAdquisicion":"2024 / 2025","rol":"Proyecto clínico integrado en Salud Mirai","modeloNegocio":"Red de clínicas privadas especializadas en medicina estética facial y cirugía estética facial","productos":"Medicina estética facial, pequeñas cirugías faciales, diagnóstico global del rostro, planificación anatómica, técnicas mínimamente invasivas, tratamientos quirúrgicos y no quirúrgicos faciales","mercados":"Medicina estética facial, cirugía estética facial, estética privada, tratamientos faciales","facturacion":"","empleados":"","ebitda":"","observaciones":"La estructura societaria puede incluir sociedades locales adicionales, como Facial Clinique Madrid 1 SL. Para el perímetro final conviene validar filiales y centros en Registro Mercantil."}]},{"id":"ambiental","name":"Familia Servicios Ambientales","companies":[{"name":"Servicios Ambientales Mirai","level":"Plataforma / grupo ambiental","sector":"Servicios ambientales, economía circular, suelos, residuos, demolición y excavación","status":"En cartera","url":"https://mirai.investments/afesa-y-mendiola/","urls":["https://mirai.investments/afesa-y-mendiola/","https://capital-riesgo.es/es/articles/mirai-adquiere-las-empresas-vascas-afesa-y-mendiola-para-entrar-en-el-sector-de-servicios-ambientales/"],"platform":true,"sede":"Euskadi; operaciones en Península e Islas","anioAdquisicion":"2026","rol":"Plataforma de servicios ambientales de Mirai","modeloNegocio":"Grupo B2B de servicios ambientales, economía circular, descontaminación, demolición, residuos y excavación para clientes industriales, energéticos y de construcción","productos":"Tratamiento de suelos contaminados, demoliciones industriales, gestión de residuos industriales, gestión de residuos de construcción y demolición, excavación, rehabilitación y desmantelamiento","mercados":"Industria pesada, energía, construcción, promotores, grandes industrias, procesos de transformación y rehabilitación industrial","facturacion":"~80 M€ según Mirai; previsión cercana a 100 M€ en 2026 según nota de operación","empleados":"~290 según Mirai; previsión de unas 300 personas según nota de operación","ebitda":"","observaciones":"No he localizado razón social holding específica. Tratar como plataforma/división, no como sociedad operativa única, salvo validación mercantil posterior."},{"name":"Afesa Medio Ambiente","level":"Compañía integrada","sector":"Suelos contaminados, residuos industriales y servicios ambientales","status":"En cartera","url":"https://www.afesa.es/","urls":["https://mirai.investments/afesa-y-mendiola/","https://capital-riesgo.es/es/articles/mirai-adquiere-las-empresas-vascas-afesa-y-mendiola-para-entrar-en-el-sector-de-servicios-ambientales/"],"platform":false,"sede":"Calle Idorsolo Kalea 15, 48160 Derio, Bizkaia; centros adicionales en Lantarón y Villanubla según nota de operación","anioAdquisicion":"2026","rol":"Compañía integrada en Servicios Ambientales","modeloNegocio":"Servicios B2B de ingeniería ambiental, descontaminación, gestión de residuos y demolición industrial","productos":"Descontaminación de suelos y acuíferos, investigación y recuperación de suelos contaminados, demoliciones, achatarramiento, voladuras controladas, gestión avanzada de residuos, desmantelamiento de instalaciones industriales","mercados":"Industria vasca, industria pesada, energía, construcción, administraciones, proyectos industriales complejos","facturacion":"65 M€ en 2025 según nota de operación","empleados":"190 según nota de operación; 173 según Axesor","ebitda":"","observaciones":"DatosCif identifica a Harrimet SL como socio único tras la operación; conviene validar estructura de control final. EEFF completos no localizados en abierto."},{"name":"Excavaciones Mendiola","level":"Compañía integrada","sector":"Excavación, demolición y gestión de residuos de construcción y demolición","status":"En cartera","url":"https://www.mendiola.es/","urls":["https://mirai.investments/afesa-y-mendiola/","https://capital-riesgo.es/es/articles/mirai-adquiere-las-empresas-vascas-afesa-y-mendiola-para-entrar-en-el-sector-de-servicios-ambientales/"],"platform":false,"sede":"Calle Paduleta 49, 01015 Vitoria-Gasteiz, Álava; situada en Júndiz según nota de operación","anioAdquisicion":"2026","rol":"Compañía integrada en Servicios Ambientales","modeloNegocio":"Servicios B2B de obra civil, excavación, demolición, transporte y gestión de residuos de construcción y demolición","productos":"Excavaciones, movimientos de tierra, apertura de pistas, limpieza de montes, levantamiento de firmes, acondicionamiento de infraestructuras, extinción de incendios en montes y bosques, demolición y derribo, gestión de residuos de construcción y demolición","mercados":"Construcción, obra civil, industria, energía, residuos de construcción y demolición, rehabilitación y desmantelamiento","facturacion":"","empleados":"","ebitda":"","observaciones":"No he localizado ventas ni empleados específicos en abierto en fuentes suficientemente robustas. La cifra agregada de plataforma no debe atribuirse individualmente a Mendiola."}]},{"id":"otros","name":"Empresas No Agrupados","companies":[{"name":"Batela","level":"","sector":"Moda náutica, impermeables y moda funcional","status":"En cartera","url":"https://batela.com/","urls":["https://mirai.investments/portfolio/batela-2/","https://mirai.investments/en/our-portfolio/"],"platform":false,"sede":"Calle Sansinenea Industrialdea, A1-13, Partzela Arroa, Zestoa, Gipuzkoa","anioAdquisicion":"2025","rol":"","modeloNegocio":"Marca B2B/B2C de moda náutica, impermeables y decoración marinera","productos":"Ropa náutica, chubasqueros, camisetas marineras, moda mujer, hombre, niño y bebé, decoración náutica, complementos","mercados":"Moda náutica, moda impermeable, decoración marinera, mercados internacionales","facturacion":"17 M€ en 2024 según Mirai; rango 15-30 M€ según Iberinform","empleados":"40 según Mirai; 11-25 según Iberinform","ebitda":"","observaciones":"No es una familia probada. Tantä aparece como segunda marca de Batela, no como compañía adquirida separada."},{"name":"Tantä","level":"","sector":"Moda waterproof / urbana","status":"Integrada en Batela como marca","url":"https://tanta-rainwear.com/","urls":["https://mirai.investments/portfolio/batela-2/"],"platform":false,"sede":"","anioAdquisicion":"No aplica","rol":"","modeloNegocio":"Línea de moda urbana impermeable dentro de Batela","productos":"Prendas 100% impermeables, diseño minimalista, tejidos técnicos, ropa waterproof","mercados":"Moda urbana, rainwear, moda técnica impermeable","facturacion":"","empleados":"","ebitda":"","observaciones":"No tratar como participada ni adquisición separada. Se incluye aquí solo para documentar que aparece vinculada a Batela."},{"name":"ISFA","level":"","sector":"Agroindustria","status":"En cartera","url":"https://isfagro.com/","urls":["https://mirai.investments/en/our-portfolio/isfa/","https://mirai.investments/en/our-portfolio/"],"platform":false,"sede":"Calle Aranzabal 9, Oficina 7, 01008 Vitoria-Gasteiz, Álava","anioAdquisicion":"No localizada con fecha exacta pública; Mirai participa desde fase de concepción según su ficha","rol":"","modeloNegocio":"Desarrollo y gestión de proyectos agrarios eficientes y sostenibles","productos":"Desarrollo de explotaciones agrícolas, gestión de proyectos agrarios, cultivos SES, almendro en seto, diversificación hacia pistacho y arándano","mercados":"Agroindustria, agricultura sostenible, España y Portugal, activos reales agrícolas","facturacion":"","empleados":"","ebitda":"","observaciones":"Consejo de administración; Azora Capital aparece como consejero en fuente mercantil abierta"},{"name":"Uztagroup","level":"","sector":"Inmobiliario","status":"En cartera según track record","url":"https://mirai.investments/track-record/","urls":["https://mirai.investments/track-record/"],"platform":false,"sede":"Calle Gran Vía Don Diego López de Haro 45, 9ª, Bilbao, Bizkaia","anioAdquisicion":"No localizada con precisión pública","rol":"","modeloNegocio":"Administración y explotación de fincas; actividad inmobiliaria / patrimonial","productos":"Administración y explotación de fincas, alquiler de bienes inmobiliarios por cuenta propia","mercados":"Inmobiliario / patrimonial","facturacion":"1-2,5 M€ según Empresia","empleados":"No localizado","ebitda":"","observaciones":"No hay declaración de integración en familia. Actividad CNAE aparece de forma no homogénea entre fuentes; tratar como activo inmobiliario/patrimonial hasta validación mercantil completa."},{"name":"Dos Grados Capital","level":"","sector":"Renovables","status":"Desinvertida","url":"https://mirai.investments/track-record/","urls":["https://mirai.investments/track-record/"],"platform":false,"sede":"Paseo de la Castellana 130, 28046 Madrid","anioAdquisicion":"2018 como plataforma fundada por Mirai y JB Capital Markets","rol":"","modeloNegocio":"Plataforma de inversión y gestión de activos reales sostenibles","productos":"Inversión, gestión, desarrollo y asesoramiento en activos renovables, energía eólica, fotovoltaica, almacenamiento energético, hidrógeno y activos electrointensivos","mercados":"Renovables, infraestructura energética, activos reales sostenibles, Iberia y Francia","facturacion":"","empleados":"","ebitda":"","observaciones":""},{"name":"Sidenhol","level":"","sector":"Renovables","status":"Desinvertida","url":"https://mirai.investments/track-record/","urls":["https://mirai.investments/track-record/"],"platform":false,"sede":"Calle Gran Vía Don Diego López de Haro 45, 9º, Bilbao, Bizkaia según eInforma; Calle Frauca 13, Tudela, Navarra según Cinco Días","anioAdquisicion":"2021","rol":"","modeloNegocio":"Joint venture / plataforma para proyectos de economía sostenible vinculados a energía, residuos y reducción de impacto ambiental","productos":"Autoconsumo eléctrico, luminarias, soluciones de eficiencia energética, residuos, generación de energía sostenible, proyectos transversales de sostenibilidad","mercados":"Industria, energía sostenible, autoconsumo, economía circular, Sidenor y sectores productivos","facturacion":"","empleados":"","ebitda":"","observaciones":""},{"name":"Talgo","level":"","sector":"Ferroviario","status":"Coparticipada / consorcial","url":"https://www.talgo.com/","urls":["https://www.alantra.com/ib-transaction/mirai-investments-buy-side-advisory-talgo/","https://capital-riesgo.es/es/articles/alantra-asesora-a-un-consorcio-liderado-por-mirai-en-la-adquisici-n-de-una-participaci-n-del-29-8-en-talgo/"],"platform":false,"sede":"Paseo del Tren Talgo 2, Las Rozas de Madrid, Madrid; sede corporativa en entorno Madrid","anioAdquisicion":"2025 / 2026 según cierre y comunicaciones de operación","rol":"","modeloNegocio":"Diseño, fabricación, mantenimiento y servicios ferroviarios","productos":"Diseño y fabricación de trenes de muy alta velocidad, larga distancia e intercity; mantenimiento ferroviario; remodelación; soluciones ferroviarias y servicios asociados","mercados":"Ferroviario, alta velocidad, transporte de pasajeros, mantenimiento, contratos internacionales","facturacion":"618 M€ ingresos 2025; 172 M€ ingresos Q1 2026","empleados":"Rango LinkedIn 1.001-5.000 empleados; fuentes mercantiles de la matriz no reflejan plantilla consolidada","ebitda":"","observaciones":"Operación sobre 29,76327%-29,8% de Talgo por consorcio liderado por Mirai/Clerbil junto con BBK, Fundación Vital y Finkatuz. No es una adquisición de control total ni una familia Mirai."}]}]};
+
+let allData = null;
+let activeFamilyId = null;
+let activeFilter = 'all';
+let searchQuery = '';
+
+document.addEventListener('DOMContentLoaded', init);
+
+function init() {
+  allData = PORTFOLIO_DATA;
+  renderTopbar();
+  renderKpiStrip();
+  renderTabs();
+  setActiveFamily(null);
+}
+
+function normalizeStatus(raw) {
+  const s = (raw || '').toLowerCase();
+  if (s.includes('desinvertida')) return 'desinvertida';
+  if (s.includes('coparticipada') || s.includes('consorcial')) return 'coparticipada';
+  if (s.startsWith('integrada')) return 'integrated';
+  return 'portfolio';
+}
+
+function getVisibleCompanies() {
+  const families = allData.families;
+  let companies;
+  if (activeFamilyId) {
+    const fam = families.find(f => f.id === activeFamilyId) || { companies: [] };
+    companies = fam.companies.map(c => ({ ...c, _familyId: fam.id, _familyName: fam.name }));
+  } else {
+    companies = families.flatMap(f => f.companies.map(c => ({ ...c, _familyId: f.id, _familyName: f.name })));
+  }
+  return companies.filter(c => normalizeStatus(c.status) !== 'desinvertida');
+}
+
+function renderTopbar() {
+  document.getElementById('topbar').innerHTML = `
+    <div class="topbar-logo">
+      <img src="assets/logo-white.png" alt="Astara Intelligence" />
+      <span class="topbar-product">Portfolio Intelligence</span>
+    </div>
+    <div class="topbar-meta">
+      <span class="topbar-badge">Mirai Investments</span>
+    </div>
+  `;
+}
+
+function renderKpiStrip() {
+  const families = allData.families;
+  const totalAll = getVisibleCompanies().length;
+
+  const familyChips = families.map(f => {
+    const count = f.companies.filter(c => normalizeStatus(c.status) !== 'desinvertida').length;
+    const shortName = f.name.replace('Familia ', '').replace('Empresas ', '');
+    return `<button class="family-chip" data-family="${f.id}" aria-label="Ver ${f.name}">
+      <span class="family-chip-name">${shortName}</span>
+      <span class="family-chip-count">${count}</span>
+    </button>`;
+  }).join('');
+
+  const strip = document.getElementById('kpi-strip');
+  strip.innerHTML = `
+    <div class="hero-header">
+      <img class="hero-logo" src="materiales/mirai-logo.png" alt="Mirai Investments" />
+      <div class="hero-title">Portfolio · Resumen global</div>
+      <div class="hero-search-wrap">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+             stroke="rgba(234,241,248,.55)" stroke-width="1.6"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="6.5" cy="6.5" r="4.5"/>
+          <line x1="10.5" y1="10.5" x2="14" y2="14"/>
+        </svg>
+        <input class="hero-search" type="search" placeholder="Buscar empresa..."
+               aria-label="Buscar empresa" value="${searchQuery.replace(/"/g, '&quot;')}" />
+      </div>
+    </div>
+    <div class="family-chips-row">${familyChips}</div>
+    <div class="kpi-row">
+      <div class="kpi-card featured">
+        <div class="kpi-label">Total empresas</div>
+        <div class="kpi-value">${totalAll}</div>
+        <div class="kpi-note">en seguimiento activo</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Familias</div>
+        <div class="kpi-value">${families.length}</div>
+        <div class="kpi-note">grupos de activos</div>
+      </div>
+    </div>
+  `;
+
+  strip.querySelector('.hero-search').addEventListener('input', e => {
+    searchQuery = e.target.value.toLowerCase();
+    renderCards();
+  });
+
+  strip.querySelectorAll('.family-chip').forEach(chip => {
+    chip.addEventListener('click', () => setActiveFamily(chip.dataset.family));
+  });
+}
+
+function renderTabs() {
+  const nav = document.getElementById('tablist');
+  const allCount = getVisibleCompanies().length;
+
+  const allTab = `<button class="tab-btn" role="tab" aria-selected="true" tabindex="0"
+    data-family="" aria-controls="cards-container">
+    Todas <span class="tab-count">${allCount}</span>
+  </button>`;
+
+  const familyTabs = allData.families.map(f => {
+    const count = f.companies.filter(c => normalizeStatus(c.status) !== 'desinvertida').length;
+    const shortName = f.name.replace('Familia ', '').replace('Empresas ', '');
+    return `<button class="tab-btn" role="tab" aria-selected="false" tabindex="-1"
+      data-family="${f.id}" aria-controls="cards-container">
+      ${shortName} <span class="tab-count">${count}</span>
+    </button>`;
+  }).join('');
+
+  nav.innerHTML = allTab + familyTabs;
+
+  nav.addEventListener('click', e => {
+    const btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    setActiveFamily(btn.dataset.family || null);
+  });
+
+  nav.addEventListener('keydown', e => {
+    const btns = [...nav.querySelectorAll('.tab-btn')];
+    const idx = btns.indexOf(document.activeElement);
+    if (e.key === 'ArrowRight') { btns[(idx + 1) % btns.length].focus(); e.preventDefault(); }
+    if (e.key === 'ArrowLeft')  { btns[(idx - 1 + btns.length) % btns.length].focus(); e.preventDefault(); }
+    if (e.key === 'Home') { btns[0].focus(); e.preventDefault(); }
+    if (e.key === 'End')  { btns[btns.length - 1].focus(); e.preventDefault(); }
+  });
+}
+
+function setActiveFamily(familyId) {
+  activeFamilyId = familyId || null;
+  activeFilter = 'all';
+  searchQuery = '';
+  const heroSearch = document.querySelector('.hero-search');
+  if (heroSearch) heroSearch.value = '';
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    const isActive = (btn.dataset.family === (activeFamilyId || ''));
+    btn.setAttribute('aria-selected', String(isActive));
+    btn.tabIndex = isActive ? 0 : -1;
+  });
+
+  renderFilterBar();
+  renderCards();
+}
+
+function renderFilterBar() {
+  const wrap = document.getElementById('filter-bar-wrap');
+  const chips = [
+    ['all', 'Todas'],
+    ['portfolio', 'En cartera'],
+    ['integrated', 'Integrada'],
+    ['coparticipada', 'Coparticipada'],
+  ];
+  wrap.innerHTML = `<div class="filter-bar">${chips.map(([val, label]) =>
+    `<button class="filter-chip" aria-pressed="${activeFilter === val}" data-filter="${val}">${label}</button>`
+  ).join('')}</div>`;
+
+  wrap.querySelectorAll('.filter-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeFilter = btn.dataset.filter;
+      renderFilterBar();
+      renderCards();
+    });
+  });
+}
+
+function getInitials(name) {
+  return name.replace(/[^a-zA-ZÀ-ɏ\s]/g, '').trim()
+    .split(/\s+/).slice(0, 2).map(w => w[0].toUpperCase()).join('');
+}
+
+const STATUS_LABELS = {
+  portfolio:     'En cartera',
+  integrated:    'Integrada',
+  coparticipada: 'Coparticipada',
+};
+
+function statusBadge(status) {
+  return `<span class="status-badge status-${status}">${STATUS_LABELS[status] ?? status}</span>`;
+}
+
+const ICON_EXTERNAL = `<svg width="11" height="11" viewBox="0 0 11 11" fill="none"
+  stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2 9L9 2M5 2h4v4"/>
+</svg>`;
+
+const ICON_CLOSE = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+  stroke="var(--as-fg-on-dark)" stroke-width="2" stroke-linecap="round">
+  <line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/>
+</svg>`;
+
+function renderCards() {
+  let companies = getVisibleCompanies()
+    .sort((a, b) => (b.platform ? 1 : 0) - (a.platform ? 1 : 0) || a.name.localeCompare(b.name, 'es'));
+
+  if (activeFilter !== 'all') {
+    companies = companies.filter(c => normalizeStatus(c.status) === activeFilter);
+  }
+  if (searchQuery) {
+    companies = companies.filter(c =>
+      c.name.toLowerCase().includes(searchQuery) ||
+      (c.sector || '').toLowerCase().includes(searchQuery) ||
+      (c.modeloNegocio || '').toLowerCase().includes(searchQuery) ||
+      (c.mercados || '').toLowerCase().includes(searchQuery)
+    );
+  }
+
+  const container = document.getElementById('cards-container');
+
+  if (companies.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state" role="status">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+             stroke="var(--as-fg-3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="14" cy="14" r="9"/><line x1="22" y1="22" x2="29" y2="29"/>
+        </svg>
+        <p>Sin resultados para los filtros actuales.</p>
+      </div>`;
+    return;
+  }
+
+  const eyebrow = activeFamilyId ? 'Familia activa' : 'Portfolio completo';
+  const title = activeFamilyId
+    ? (allData.families.find(f => f.id === activeFamilyId) || {}).name || ''
+    : 'Todas las empresas';
+
+  const headerHtml = `
+    <div class="sector-header">
+      <div>
+        <div class="sector-eyebrow">${eyebrow}</div>
+        <div class="sector-title">${title}</div>
+      </div>
+      <span class="sector-count">${companies.length} ${companies.length === 1 ? 'empresa' : 'empresas'}</span>
+    </div>`;
+
+  const showFamilyTag = !activeFamilyId;
+
+  const cards = companies.map(c => {
+    const status = normalizeStatus(c.status);
+    const tags = (c.mercados || c.sector || '').split(/[,;]/).map(t => t.trim()).filter(Boolean).slice(0, 3);
+    const linkHost = c.url && c.url !== 'N/A' ? new URL(c.url).hostname.replace('www.', '') : null;
+
+    return `<article
+      class="company-card${c.platform ? ' platform' : ''}"
+      role="button" tabindex="0"
+      data-company="${encodeURIComponent(JSON.stringify(c))}"
+      aria-label="Ver detalle de ${c.name}"
+    >
+      <div class="card-avatar" aria-hidden="true">${getInitials(c.name)}</div>
+      <div class="card-body">
+        <div class="card-name">${c.name}</div>
+        <div class="card-def">${c.sector || c.modeloNegocio || ''}</div>
+        <div class="card-tags">${tags.map(t => `<span class="card-tag">${t}</span>`).join('')}</div>
+      </div>
+      <div class="card-right">
+        ${showFamilyTag && c._familyName ? `<span class="card-family-tag">${c._familyName.replace('Familia ', '').replace('Empresas ', '')}</span>` : ''}
+        ${statusBadge(status)}
+        ${linkHost ? `<a class="card-link" href="${c.url}" target="_blank" rel="noopener noreferrer"
+           onclick="event.stopPropagation()">
+          ${linkHost} ${ICON_EXTERNAL}
+        </a>` : ''}
+      </div>
+    </article>`;
+  }).join('');
+
+  container.innerHTML = headerHtml + cards;
+
+  container.querySelectorAll('.company-card').forEach(card => {
+    card.addEventListener('click', () => openModal(card));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
+    });
+  });
+}
+
+function openModal(cardEl) {
+  const c = JSON.parse(decodeURIComponent(cardEl.dataset.company));
+  const status = normalizeStatus(c.status);
+  const backdrop = document.getElementById('modal-backdrop');
+
+  const urlLinks = [];
+  if (c.url && c.url !== 'N/A') {
+    try {
+      const host = new URL(c.url).hostname.replace('www.', '');
+      urlLinks.push({ href: c.url, label: host });
+    } catch (_) {}
+  }
+  (c.urls || []).forEach(url => {
+    if (!url || url === c.url) return;
+    try {
+      const host = new URL(url).hostname.replace('www.', '');
+      const label = url.includes('mirai.investments') ? 'mirai.investments' :
+                    url.includes('capital-riesgo') ? 'capital-riesgo.es' :
+                    url.includes('cuatrecasas') ? 'cuatrecasas.com' :
+                    url.includes('alantra') ? 'alantra.com' : host;
+      urlLinks.push({ href: url, label });
+    } catch (_) {}
+  });
+
+  const uniqueLinks = urlLinks.filter((l, i, arr) => arr.findIndex(x => x.href === l.href) === i);
+  const renderLink = (l) => `<a class="modal-link" href="${l.href}" target="_blank" rel="noopener noreferrer">${l.label} ${ICON_EXTERNAL}</a>`;
+
+  const financials = [];
+  if (c.facturacion && c.facturacion.includes('€')) financials.push({ label: 'Facturación', val: c.facturacion });
+  if (c.empleados && /\d/.test(c.empleados)) financials.push({ label: 'Empleados', val: c.empleados });
+  if (c.ebitda && (c.ebitda.includes('€') || /\d/.test(c.ebitda))) financials.push({ label: 'EBITDA', val: c.ebitda });
+
+  const metaFields = [];
+  if (c.sede) metaFields.push(`<div class="modal-field-half"><div class="field-label">Sede</div><div class="field-value">${c.sede}</div></div>`);
+  if (c.anioAdquisicion) metaFields.push(`<div class="modal-field-half"><div class="field-label">Año adquisición</div><div class="field-value">${c.anioAdquisicion}</div></div>`);
+
+  backdrop.innerHTML = `
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <button class="modal-close" id="modal-close-btn" aria-label="Cerrar">${ICON_CLOSE}</button>
+        <div class="modal-avatar" aria-hidden="true">${getInitials(c.name)}</div>
+        <div id="modal-company-name" class="modal-name">${c.name}</div>
+        <div class="modal-sector">${c._familyName || ''} · ${STATUS_LABELS[status] ?? c.status}</div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-status-row">
+          <div>
+            <div class="modal-status-label">Estado</div>
+            ${statusBadge(status)}
+          </div>
+          <div class="modal-links">${uniqueLinks.slice(0, 2).map(renderLink).join('')}</div>
+        </div>
+        <hr class="modal-divider">
+
+        ${metaFields.length ? `<div class="modal-meta-row">${metaFields.join('')}</div>` : ''}
+
+        ${c.rol && !['En cartera', 'En cartera / coparticipada'].includes(c.rol) ? `
+          <div class="modal-field"><div class="field-label">Rol en el portfolio</div><div class="field-value">${c.rol}</div></div>` : ''}
+
+        ${c.modeloNegocio ? `
+          <div class="modal-field"><div class="field-label">Modelo de negocio</div><div class="field-value">${c.modeloNegocio}</div></div>` : ''}
+
+        ${c.productos ? `
+          <div class="modal-field"><div class="field-label">Productos y servicios</div><div class="field-value">${c.productos}</div></div>` : ''}
+
+        ${c.mercados ? `
+          <div class="modal-field"><div class="field-label">Sectores y mercados</div>
+            <div class="field-tags">${c.mercados.split(/[,;]/).map(t=>t.trim()).filter(Boolean).map(t=>`<span class="field-tag">${t}</span>`).join('')}</div>
+          </div>` : ''}
+
+        ${financials.length ? `
+          <div class="modal-financials">${financials.map(f=>
+            `<div class="modal-kpi"><div class="field-label">${f.label}</div><div class="kpi-value-sm">${f.val}</div></div>`
+          ).join('')}</div>` : ''}
+
+        ${c.observaciones ? `
+          <div class="modal-observaciones"><div class="field-label">Nota</div><div class="field-value">${c.observaciones}</div></div>` : ''}
+
+        ${uniqueLinks.length > 2 ? `
+          <div class="modal-more-links">${uniqueLinks.slice(2).map(renderLink).join('')}</div>` : ''}
+      </div>
+    </div>
+  `;
+
+  backdrop.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+
+  const closeBtn = document.getElementById('modal-close-btn');
+  closeBtn.focus();
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', handleModalKeydown);
+}
+
+function closeModal() {
+  const backdrop = document.getElementById('modal-backdrop');
+  backdrop.setAttribute('hidden', '');
+  backdrop.innerHTML = '';
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', handleModalKeydown);
+}
+
+function handleModalKeydown(e) {
+  if (e.key === 'Escape') closeModal();
+}
+
+</script>
+</body>
+</html>
