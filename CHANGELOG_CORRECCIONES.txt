@@ -1,0 +1,60 @@
+Correcciones aplicadas — Mirai Investments Portfolio Intelligence
+==================================================================
+Fecha: validación cruzada contra mirai.investments, innometalgroup.com
+y fuentes mercantiles abiertas (einforma, axesor).
+
+Archivos corregidos: index.html (PORTFOLIO_DATA embebido) y data.json.
+Ambos quedan sincronizados con el mismo contenido para la familia Innometal.
+
+1) Metalec — desalineación de columnas (bug de datos, no alucinación)
+   A partir del campo "rol", los valores estaban desplazados una posición,
+   provocando que "facturacion" mostrara texto de mercados, "ebitda"
+   mostrara la cifra de facturación real, "url" mostrara texto de
+   observaciones, y "observaciones" quedara vacía.
+
+   Antes:
+     rol:            "En cartera / coparticipada" (duplicado de status)
+     modeloNegocio:   "Compañía integrada en Innometal"
+     productos:       "Montaje electromecánico de alto valor añadido"
+     mercados:        "Montaje electromecánico, envolventes metálicas..."
+     facturacion:     "Vending y sistemas de cobro, electromedicina..."
+     ebitda:          "30 M€ según Innometal; rango 3-50 M€ según Axesor"
+     url:             "La cifra de Innometal parece posiblemente agregada..."
+     observaciones:   "" (vacío)
+
+   Después (campos realineados):
+     rol:            "Compañía integrada en Innometal"
+     modeloNegocio:   "Montaje electromecánico de alto valor añadido"
+     productos:       "Montaje electromecánico, envolventes metálicas,
+                        elementos funcionales y decorativos para bienes
+                        de equipo, ingeniería de producto, prototipado,
+                        logística dedicada"
+     mercados:        "Vending y sistemas de cobro, electromedicina,
+                        renovables, entretenimiento, smart cities"
+     facturacion:     "30 M€ según Innometal; rango 3-50 M€ según Axesor"
+     ebitda:          "" (vacío, sin dato fiable localizado)
+     url:             "https://www.metalec.es/"
+     observaciones:   "La cifra de Innometal parece posiblemente agregada
+                        o no coincidente con fuentes mercantiles. Falta
+                        validar fecha de constitución, domicilio
+                        mercantil completo y órgano de administración."
+
+2) IMAR — URL corporativa incorrecta (alucinación / dato erróneo)
+   Antes:   "url": "https://www.imar.es/"
+            -> Este dominio pertenece a IMAR Spain Pack, fabricante de
+               máquinas envasadoras (sector packaging), sin relación
+               con Innometal Group.
+   Después: "url": "https://www.imar-innometal.com/es/home"
+            -> URL corporativa real de IMAR | Innometal (chapa
+               perforada, abocardada, estampada y metal expandido),
+               verificada y coincidente con la ficha original del CSV.
+
+Nota de alcance
+----------------
+Esta validación cubrió la familia "Innometal Group" (la que traía ficha
+de due diligence en CSV). Las otras 5 familias del portfolio (Ohmnia
+Group, Labery, Grupo Salud, Servicios Ambientales, Empresas No
+Agrupadas) están presentes en data.json / index.html tal como se
+recibieron, SIN el mismo nivel de verificación cruzada. Se recomienda
+una pasada de validación adicional antes de publicar el dashboard
+completo como definitivo.

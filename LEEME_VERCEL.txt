@@ -1,0 +1,13 @@
+Paquete listo para Vercel.
+
+Qué cambia frente al paquete original:
+- ABRIR_PRESENTACION.html se ha renombrado a index.html.
+- index.html está en la raíz del proyecto.
+- Se mantienen las carpetas assets/ y materiales/ porque el HTML usa esos paths relativos.
+
+Cómo desplegar:
+1. Sube el contenido de esta carpeta a GitHub o arrástralo a Vercel.
+2. Framework preset: Other.
+3. Build command: vacío.
+4. Output directory: vacío o raíz.
+5. Accede a la URL raíz del deploy.

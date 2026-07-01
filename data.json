@@ -32,7 +32,7 @@
           "level": "Empresa inicial / ancla",
           "sector": "Transformación metálica; metal perforado, plegado, punzonado y expandido",
           "status": "En cartera",
-          "url": "https://www.imar.es/",
+          "url": "https://www.imar-innometal.com/es/home",
           "urls": [
             "https://mirai.investments/en/innometal-group-2/",
             "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/"
@@ -207,7 +207,7 @@
           "level": "Compañía integrada",
           "sector": "Montajes electromecánicos de alto valor añadido",
           "status": "En cartera",
-          "url": "https://metalec.es/",
+          "url": "https://www.metalec.es/",
           "urls": [
             "https://www.innometalgroup.com/en/mirai-expands-its-portfolio-of-industrial-companies/",
             "https://www.innometalgroup.com/en/installations/"
@@ -215,14 +215,14 @@
           "platform": false,
           "sede": "Factory/Main office: Pla dels Avellaners 10, Santa Perpètua de Mogoda, Barcelona",
           "anioAdquisicion": "",
-          "rol": "En cartera / coparticipada",
-          "modeloNegocio": "Compañía integrada en Innometal",
-          "productos": "Montaje electromecánico de alto valor añadido",
-          "mercados": "Montaje electromecánico, envolventes metálicas, elementos funcionales y decorativos para bienes de equipo, ingeniería de producto, prototipado, logística dedicada",
-          "facturacion": "Vending y sistemas de cobro, electromedicina, renovables, entretenimiento, smart cities",
+          "rol": "Compañía integrada en Innometal",
+          "modeloNegocio": "Montaje electromecánico de alto valor añadido",
+          "productos": "Montaje electromecánico, envolventes metálicas, elementos funcionales y decorativos para bienes de equipo, ingeniería de producto, prototipado, logística dedicada",
+          "mercados": "Vending y sistemas de cobro, electromedicina, renovables, entretenimiento, smart cities",
+          "facturacion": "30 M€ según Innometal; rango 3-50 M€ según Axesor",
           "empleados": "",
-          "ebitda": "30 M€ según Innometal; rango 3-50 M€ según Axesor",
-          "observaciones": ""
+          "ebitda": "",
+          "observaciones": "La cifra de Innometal parece posiblemente agregada o no coincidente con fuentes mercantiles. Falta validar fecha de constitución, domicilio mercantil completo y órgano de administración."
         },
         {
           "name": "Tecro",
